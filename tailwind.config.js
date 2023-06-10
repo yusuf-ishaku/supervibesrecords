@@ -7,8 +7,9 @@ export default {
     "./src/components/Aspect.jsx",
     "./src/pages/Home.jsx",
     "./src/components/Hero.jsx",
-    "./src/components/Carousel.jsx",
-    "./src/App.jsx"
+    "./src/components/IntroHero.jsx",
+    "./src/App.jsx",
+
   ],
   theme: {
     extend: {},
