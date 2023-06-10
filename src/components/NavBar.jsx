@@ -1,34 +1,35 @@
-import Logo from "../assets/images/logo.png"
+import Logo from "../assets/images/logo.png";
+import { Link } from 'react-router-dom';
 export const NavBar = () =>{
     return (
-        <nav className="flex flex-row items-center absolute w-[100vw] h-[5rem] px-8 bg-white/30 backdrop-blur-sm ">
+        <nav className="flex flex-row items-center w-full absolute h-[5rem] px-8 bg-white/30 backdrop-blur-sm">
            <figure className="h-[100%] w-fit pl-4 mr-auto">
-                <img className="w-auto h-[100%]" width="auto" height='50%' src={Logo}></img>
+                <img className=" h-[100%]" width="auto" height='50%' src={Logo}></img>
            </figure>
            <section className="flex flex-row">
                 <h3 className="active mx-4">
-                    Home
+                    <Link>Home</Link>
                 </h3>
                 <h3 className="mx-4 text-white">
-                    About Us
+                   <Link>About Us</Link> 
                 </h3>
                 <h3 className="mx-4 text-white">
-                    Artists
+                    <Link>Artists</Link>
                 </h3>
                 <h3 className="mx-4 text-white">
-                    Videos
+                    <Link>Videos</Link>
                 </h3>
                 <h3 className="mx-4 text-white">
-                    Music
+                   <Link>Music</Link> 
                 </h3>
                 <h3 className="mx-4 text-white">
-                    Shop
+                   <Link>Shop</Link>
                 </h3>
                 <h3 className="mx-4 text-white">
-                    Tours and Tickets
+                    <Link>Tours and Tickets</Link>
                 </h3>
                 <h3 className="mx-4 show text-white opacity-100">
-                    Contact Us
+                    <Link>Contact Us</Link>
                 </h3>
            </section>
         </nav>
