@@ -3,7 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/components/NavBar.jsx",
-    "./src/components/Carousel.jsx",
+    "./src/components/myCarousel.jsx",
     "./src/components/Aspect.jsx",
     "./src/pages/Home.jsx",
     "./src/components/Hero.jsx",

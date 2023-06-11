@@ -4,11 +4,20 @@
 
 
 body{
-  
     font-family: 'Roboto Condensed', sans-serif;
-    background-color: #0A0B14;
-  
+    /* background-color: #0A0B14; */
+    padding: 0;
+    margin: 0;
 }
 .ryan{
     background-image: url(../src/assets/images/firstimage.png)
+}
+.terry{
+    background-image: url(../src/assets/images/alex-d-rogers-062820-0109-wide\ 2.png);
+}
+.friz{
+    background-image: url(../src/assets/images/Rectangle\ 24.png);
+}
+.clan{
+    transition: transform 1s;
 }
