@@ -1,6 +1,6 @@
 export const IntroHero = ({clas, artist}) =>{
     return(
-        <section className={`${clas} clan flex justify-center w-[100vw] py-4 h-full bg-cover bg-blend-multiply bg-gray-500 bg-no-repeat`}>
+        <section className={`${clas} clan flex justify-center w-[100vw] py-4 h-auto bg-cover bg-blend-multiply bg-gray-500 bg-no-repeat`}>
         <article className="flex flex-col items-center text-center  mt-64  ">
           <header>
             <h2 className="text-[#E6E6E6] font-bold text-6xl mb-6">
