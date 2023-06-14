@@ -13,7 +13,6 @@ export const Caro =({children}) => {
         console.log("mmm");
     },);
     let forwardMove = () =>{
-        
         let slides = Array.from(carousel.current.children);
         let value = slides.length;
         console.log("fn")
@@ -21,11 +20,12 @@ export const Caro =({children}) => {
         let currentSlide = document.querySelector(".current_slide");
         let targetSlide = currentSlide.nextElementSibling;
         let minard = slides.indexOf(currentSlide);
-        setMapper(minard)
+        setMapper(minard);
         let tinard = slides.indexOf(targetSlide);
         targetSlide.classList.add("current_slide")
         currentSlide.classList.remove("current_slide");
         carousel.current.style.transform = `translateX(-${tinard * 100}vw)`;
+
     }
  
     return (
