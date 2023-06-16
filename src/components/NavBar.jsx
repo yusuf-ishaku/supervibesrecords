@@ -2,7 +2,7 @@ import Logo from "../assets/images/logo.png";
 import { Link } from 'react-router-dom';
 export const NavBar = () =>{
     return (
-        <nav className="flex flex-row items-center m-0 fixed w-[100vw] h-[5rem]  bg-white/30 backdrop-blur-sm z-50">
+        <nav className="flex flex-row items-center m-0 fixed w-full h-[5rem]  bg-white/30 backdrop-blur-sm z-50">
            <figure className="h-[100%] w-fit pl-4 mr-auto">
                 <img className=" h-[100%]" width="auto" height='50%' src={Logo}></img>
            </figure>

@@ -9,6 +9,8 @@ export default {
     "./src/components/Hero.jsx",
     "./src/components/IntroHero.jsx",
     "./src/App.jsx",
+    "./src/components/minorComponents/artistFace.jsx",
+    "./src/components/shape.jsx"
 
   ],
   theme: {

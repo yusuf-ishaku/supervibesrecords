@@ -14,7 +14,7 @@ export const Caro =({children}) => {
     },);
     let forwardMove = () =>{
         let slides = Array.from(carousel.current.children);
-        let value = slides.length;
+        // let value = slides.length;
         console.log("fn")
         console.log(slides);
         let currentSlide = document.querySelector(".current_slide");
@@ -30,12 +30,12 @@ export const Caro =({children}) => {
  
     return (
         <>
-            <div className="flex items-center fixed z-50  left-[45%] justify-center mt-[32rem]  flex-row">
+            <div className=" items-center hidden z-50   justify-center mt-[32rem]  flex-row">
                 <IoArrowBackCircleOutline size={"34px"} color="gray" style={{marginRight: '10px'}}></IoArrowBackCircleOutline>
                 <IoArrowForwardCircleOutline onClick={() => forwardMove()}  size={'34px'} color={mapper >= 2 ? "gray" : "white"} style={{marginLeft: '10px', zIndex: mapper >= 2 ? '-10px': '0'}}></IoArrowForwardCircleOutline>
             </div>
-            <button className="absolute z-50 bg-red-500 px-4 p-2 text-white">Test button</button>
-            <div ref={carouselParent} className="w-[100vw] overflow-x-hidden">
+            {/* <button className="absolute z-50 bg-red-500 px-4 p-2 text-white">Test button</button> */}
+            <div ref={carouselParent} className="w-full overflow-x-hidden">
                 <div ref={carousel} className="clan flex w-fit carousel ">
                 {children}
                 </div>
