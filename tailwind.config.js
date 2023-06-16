@@ -10,6 +10,8 @@ export default {
     "./src/components/IntroHero.jsx",
     "./src/App.jsx",
     "./src/components/minorComponents/artistFace.jsx",
+    "./src/components/minorComponents/musicCards.jsx",
+    "./src/components/minorComponents/musicPlayer.jsx",
     "./src/components/shape.jsx"
 
   ],

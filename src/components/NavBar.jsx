@@ -1,5 +1,5 @@
 import Logo from "../assets/images/logo.png";
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 export const NavBar = () =>{
     return (
         <nav className="flex flex-row items-center m-0 fixed w-full h-[5rem]  bg-white/30 backdrop-blur-sm z-50">
@@ -7,29 +7,29 @@ export const NavBar = () =>{
                 <img className=" h-[100%]" width="auto" height='50%' src={Logo}></img>
            </figure>
            <section className="flex flex-row">
-                <h3 className="active mx-4">
-                    <Link>Home</Link>
+                <h3 className="mx-4">
+                    <NavLink to={'/'} >Home</NavLink>
                 </h3>
                 <h3 className="mx-4 text-white">
-                   <Link>About Us</Link> 
+                   <NavLink to={"/about"}>About Us</NavLink> 
                 </h3>
                 <h3 className="mx-4 text-white">
-                    <Link>Artists</Link>
+                    <NavLink>Artists</NavLink>
                 </h3>
                 <h3 className="mx-4 text-white">
-                    <Link>Videos</Link>
+                    <NavLink>Videos</NavLink>
                 </h3>
                 <h3 className="mx-4 text-white">
-                   <Link>Music</Link> 
+                   <NavLink>Music</NavLink> 
                 </h3>
                 <h3 className="mx-4 text-white">
-                   <Link>Shop</Link>
+                   <NavLink>Shop</NavLink>
                 </h3>
                 <h3 className="mx-4 text-white">
-                    <Link>Tours and Tickets</Link>
+                    <NavLink>Tours and Tickets</NavLink>
                 </h3>
                 <h3 className="mx-4 show text-white opacity-100">
-                    <Link>Contact Us</Link>
+                    <NavLink>Contact Us</NavLink>
                 </h3>
            </section>
         </nav>
