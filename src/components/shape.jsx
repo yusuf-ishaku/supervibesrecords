@@ -1,6 +1,6 @@
 // import { Children } from "react"
 import { IoArrowForwardCircleOutline, IoArrowBackCircleOutline } from 'react-icons/io5';
-export const Shape = ({children, headText}) =>{
+export const Shape = ({children, headText, car}) =>{
     return(
         <section className="w-full h-fit bg-[#0A0B14] py-8 px-16">
             <div className="flex flex-col items-center mt-10 mb-10">
@@ -18,7 +18,7 @@ export const Shape = ({children, headText}) =>{
                     {children}
                 </div>
             </div>
-            <div className="flex flex-row justify-between">
+            { car ? <div className="flex flex-row justify-between">
                 <div className="flex flex-row w-16 justify-between">
                 <IoArrowBackCircleOutline size={"30px"} color="gray" ></IoArrowBackCircleOutline>
                 <IoArrowForwardCircleOutline   size={'30px'} color={"gray"} ></IoArrowForwardCircleOutline>
@@ -26,7 +26,7 @@ export const Shape = ({children, headText}) =>{
                 <button className='border-[#FFAA00] text-[#FFAA00] p-2 px-6 border-[1px] rounded-md bg-[]'>
                     See more
                 </button>
-            </div>
+            </div> : ""}
         </section>
     )
 };

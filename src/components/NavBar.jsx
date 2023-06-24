@@ -1,5 +1,5 @@
 import Logo from "../assets/images/logo.png";
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink,} from 'react-router-dom';
 export const NavBar = () =>{
     return (
         <nav className="flex flex-row items-center m-0 fixed w-full h-[5rem]  bg-white/30 backdrop-blur-sm z-50">
@@ -7,7 +7,7 @@ export const NavBar = () =>{
                 <img className=" h-[100%]" width="auto" height='50%' src={Logo}></img>
            </figure>
            <section className="flex flex-row">
-                <h3 className="mx-4">
+                <h3 className="mx-4 text-white">
                     <NavLink to={'/'} >Home</NavLink>
                 </h3>
                 <h3 className="mx-4 text-white">

@@ -12,7 +12,8 @@ export default {
     "./src/components/minorComponents/artistFace.jsx",
     "./src/components/minorComponents/musicCards.jsx",
     "./src/components/minorComponents/musicPlayer.jsx",
-    "./src/components/shape.jsx"
+    "./src/components/shape.jsx",
+    "./src/pages/AboutUs.jsx"
 
   ],
   theme: {

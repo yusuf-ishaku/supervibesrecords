@@ -8,7 +8,7 @@ export const Home = ()=>{
     return(
         <section className="m-0 p-0 w-full">
             <Hero></Hero>
-            <Shape headText={"Introducing our Artistes"}>
+            <Shape headText={"Introducing our Artistes"} car={true}>
                 {
                     ArtistPack.map((artist, x) =>{
                         return (
@@ -19,12 +19,12 @@ export const Home = ()=>{
                     })
                 }
             </Shape>
-            <Shape headText={"Latest Release"}>
+            <Shape car={true} headText={"Latest Release"}>
                 <MusicCards></MusicCards>
                 <MusicCards></MusicCards>
                 <MusicCards></MusicCards>
             </Shape>
-            <Shape headText={"Videos"}>
+            <Shape car={true} headText={"Videos"}>
 
             </Shape>
         </section> 

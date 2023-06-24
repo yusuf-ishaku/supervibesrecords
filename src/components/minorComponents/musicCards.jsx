@@ -1,6 +1,5 @@
 import { MusicPlayer } from "./musicPlayer"
 
-
 export const MusicCards = () =>{
     return(
         <>
