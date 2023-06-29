@@ -11,7 +11,7 @@ export const Home = ()=>{
             <Hero></Hero>
             <Shape headText={"Introducing our Artistes"} car={true}>
                 {
-                    ArtistPack.map((artist, x) =>{
+                    ArtistPack.map((artist) =>{
                         return (
                             <>
                              <ArtistFace link={artist.link} name={artist.name}></ArtistFace>
