@@ -13,7 +13,13 @@ export default {
     "./src/components/minorComponents/musicCards.jsx",
     "./src/components/minorComponents/musicPlayer.jsx",
     "./src/components/shape.jsx",
-    "./src/pages/AboutUs.jsx"
+    "./src/pages/AboutUs.jsx",
+    "./src/pages/ArtistsPage.jsx",
+    "./src/pages/Contact.jsx",
+    "./src/pages/MusicsPage.jsx",
+    "./src/pages/ToursandTickets.jsx",
+    "./src/components/minorComponents/artistInfo.jsx",
+    "./src/components/NewTickets.jsx",
 
   ],
   theme: {

@@ -14,22 +14,16 @@ export const NavBar = () =>{
                    <NavLink to={"/about"}>About Us</NavLink> 
                 </h3>
                 <h3 className="mx-4 text-white">
-                    <NavLink>Artists</NavLink>
+                    <NavLink to={"/artists"}>Artists</NavLink>
                 </h3>
                 <h3 className="mx-4 text-white">
-                    <NavLink>Videos</NavLink>
+                    <NavLink to={"/music"}>Music</NavLink>
                 </h3>
                 <h3 className="mx-4 text-white">
-                   <NavLink>Music</NavLink> 
-                </h3>
-                <h3 className="mx-4 text-white">
-                   <NavLink>Shop</NavLink>
-                </h3>
-                <h3 className="mx-4 text-white">
-                    <NavLink>Tours and Tickets</NavLink>
+                    <NavLink to={"/ticketsandtours"}>Tours and Tickets</NavLink>
                 </h3>
                 <h3 className="mx-4 show text-white opacity-100">
-                    <NavLink>Contact Us</NavLink>
+                    <NavLink to={"/contact"}>Contact Us</NavLink>
                 </h3>
            </section>
         </nav>

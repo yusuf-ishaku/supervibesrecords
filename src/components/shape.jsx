@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // import { Children } from "react"
 import { IoArrowForwardCircleOutline, IoArrowBackCircleOutline } from 'react-icons/io5';
 export const Shape = ({children, headText, car}) =>{
