@@ -117,7 +117,7 @@ export const AboutUs = () =>{
                     </section>
                     <section className="flex flex-col items-center mx-10">
                         <figure className="block rounded-full h-fit">
-                            <img src={Loud2} alt="" />
+                            <img src={Loud3} alt="" />
                         </figure>
                         <article className="flex flex-col items-center">
                             <h1 className="text-white text-2xl">Montala Jay</h1>
@@ -128,7 +128,7 @@ export const AboutUs = () =>{
                     </section>
                     <section className="flex flex-col items-center mx-10">
                         <figure className="block rounded-full h-fit">
-                            <img src={Loud2} alt="" />
+                            <img src={Loud4} alt="" />
                         </figure>
                         <article className="flex flex-col items-center">
                             <h1 className="text-white text-2xl">Montala Jay</h1>
