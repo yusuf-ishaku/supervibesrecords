@@ -20,6 +20,7 @@ export default {
     "./src/pages/ToursandTickets.jsx",
     "./src/components/minorComponents/artistInfo.jsx",
     "./src/components/NewTickets.jsx",
+    "./src/components/Nav2.jsx"
 
   ],
   theme: {

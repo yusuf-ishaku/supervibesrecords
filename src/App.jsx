@@ -8,6 +8,7 @@ import { ArtistsPage } from './pages/ArtistsPage';
 import { MusicsPage } from './pages/MusicsPage';
 import { ToursAndTickets } from './pages/ToursandTickets';
 import { Contact } from './pages/Contact';
+import { Nav2 } from './components/Nav2';
 function App() {
   // const [count, setCount] = useState(0);
 
@@ -15,6 +16,7 @@ function App() {
     <>
      <Router>
       <NavBar></NavBar>
+      <Nav2></Nav2>
       <Routes>
         <Route element={<Home></Home>} path="/"></Route>
         <Route element={<AboutUs></AboutUs>} path='/about'></Route>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ReactPlayer from "react-player/youtube";
 import { MusicCards } from "../components/minorComponents/musicCards";
+import { YouTubeVideos } from "../assets/db/ytvids";
 export const MusicsPage = () =>{
     const [setter, setSetter] = useState(true)
     return(
@@ -16,13 +17,15 @@ export const MusicsPage = () =>{
                     Audio
                 </span>
             </div>
-            <section className="w-full py-10 grid grid-cols-1 sm:grid-cols-2 gap-6 p-[auto]">
+            <section className="w-full py-10 grid grid-cols-1 md:grid-cols-2 gap-6 p-[auto]">
                 {
                     setter ? ( 
                         <>
-                        <div><ReactPlayer width={"34rem"} controls={true} url={"https://www.youtube.com/watch?v=1PWDxgqLmDA"}></ReactPlayer></div>
-                        <div><ReactPlayer width={"34rem"} controls={true} url={"https://www.youtube.com/watch?v=1PWDxgqLmDA"}></ReactPlayer></div>
-                        <div><ReactPlayer width={"34rem"} controls={true} url={"https://www.youtube.com/watch?v=1PWDxgqLmDA"}></ReactPlayer></div> 
+                            {YouTubeVideos.map((x,y) =>{
+                                return(
+                                    <div key={y} className="md:w-[15rem] w-full"><ReactPlayer width={"inherit"} controls={true} url={x}></ReactPlayer></div>
+                                )
+                            })}
                         </>
                         )
                     : 

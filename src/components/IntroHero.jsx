@@ -1,7 +1,7 @@
 export const IntroHero = ({clas, artist}) =>{
     return(
         <section className={`${clas} clan flex justify-center w-[100vw] py-4 h-auto bg-cover bg-blend-multiply bg-gray-500 bg-no-repeat`}>
-        <article className="flex flex-col items-center text-center  mt-64  ">
+        <article className="flex flex-col items-center text-center mt-28 sm:mt-64  ">
           <header>
             <h2 className="text-[#E6E6E6] font-bold text-6xl mb-6">
               Super Vibes Records
@@ -17,7 +17,7 @@ export const IntroHero = ({clas, artist}) =>{
               See more
             </button>
           </section>
-          <figcaption className="mt-24 w-full pr-32 text-right">
+          <figcaption className="mt-24 w-full pr-32 text-right sm:text-right">
               <span className=" text-[#E6E6E6] text-4xl opacity-60 ">
                   {artist}
               </span>
