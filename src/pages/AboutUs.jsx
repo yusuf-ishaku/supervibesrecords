@@ -15,8 +15,8 @@ export const AboutUs = () =>{
     return (
       <>
         <section className="w-full h-fit p-0 m-0 bg-[#0A0B14]">
-            <section className="w-full flex flex-row items-center justify-between h-[25rem] px-32 body bg-[#16182c]">
-                <article className="flex flex-col items-center">
+            <section className="w-full flex flex-col md:flex-row pt-28 md:pt-0 pb-20 md:pb-0 items-center justify-between h-fit md:h-[25rem] px-4 md:px-32 body bg-[#16182c]">
+                <article className="flex flex-col items-center my-10 md:my-0">
                         <header>
                             <h2 className="text-white text-4xl">
                                 Artists
@@ -26,7 +26,7 @@ export const AboutUs = () =>{
                             <span><CountUp end={10} duration={8}></CountUp></span>
                         </div>
                 </article>
-                <article className="flex flex-col items-center">
+                <article className="flex flex-col items-center my-10 md:my-0">
                         <header>
                             <h2 className="text-white text-4xl">
                                 Music Recorded
@@ -47,11 +47,11 @@ export const AboutUs = () =>{
                         </div>
                 </article>
             </section>
-            <section className="w-full p-16 px-16 flex flex-row items-center justify-around">
-                <div className="bg-black flex items-center justify-center h-[15rem] rounded-md w-[23rem]">
+            <section className="w-full md:p-16 p-4 md:px-16 flex flex-col md:flex-row  items-center justify-around">
+                <div className="bg-black flex items-center justify-center h-[15rem] rounded-md w-full md:w-[23rem]">
                     <img src={Logo}></img>
                 </div>
-                <article className="w-2/5 text-white text-xl leading-6">
+                <article className="w-full md:w-2/5 text-white text-xl pt-4 md:pt-0 text-center md:text-left leading-7 md:leading-6">
                     <p>
                         Super Vibez Records is a Nigerian music corporation record
                         label founded by record producer and recording artist 
@@ -64,35 +64,35 @@ export const AboutUs = () =>{
                 </article>
             </section>
             <Shape headText={"Our Services"} car={false}>
-                <div className="w-full flex flex-row px-16 items-center justify-between">
-                    <div className="flex flex-col justify-center items-center border-[#FFAA0080] rounded-md border-[1px] ml-10 bg-[#6666661a] w-[20rem] h-[20rem]">
+                <div className="w-full flex flex-col md:flex-row px-4 md:px-16 items-center justify-between">
+                    <div className="flex flex-col justify-center items-center border-[#FFAA0080] rounded-md border-[1px] ml-0 md:ml-10 p-6 md:p-0 mb-4 md:mb-0 bg-[#6666661a] w-full h-auto md:w-[20rem] md:h-[20rem]">
                         <figure className="mb-4">
                             <img src={Label} alt="" />
                         </figure>
                         <figcaption>
-                            <h2 className="text-[#FFAA0080] text-3xl">Record Deals</h2>
+                            <h2 className="text-[#FFAA0080] text-2xl md:text-3xl">Record Deals</h2>
                         </figcaption>
                     </div>
-                    <div className="flex flex-col justify-center items-center border-[#FFAA0080] rounded-md ml-10 border-[1px] bg-[#6666661a] w-[20rem] h-[20rem]">
+                    <div className="flex flex-col justify-center items-center border-[#FFAA0080] rounded-md border-[1px] ml-0 md:ml-10 p-6 md:p-0 mb-4 md:mb-0 bg-[#6666661a] w-full h-auto md:w-[20rem] md:h-[20rem]">
                         <figure className="mb-4">
                             <img src={HandShake} alt="" />
                         </figure>
                         <figcaption>
-                            <h2 className="text-[#FFAA0080] text-3xl">Brand Partnerships</h2>
+                            <h2 className="text-[#FFAA0080] text-2xl md:text-3xl">Brand Partnerships</h2>
                         </figcaption>
                     </div>
-                    <div className="flex flex-col justify-center items-center border-[#FFAA0080] rounded-md ml-10 border-[1px] bg-[#6666661a] w-[20rem] h-[20rem]">
+                    <div className="flex flex-col justify-center items-center border-[#FFAA0080] rounded-md border-[1px] ml-0 md:ml-10 p-6 md:p-0 mb-4 md:mb-0 bg-[#6666661a] w-full h-auto md:w-[20rem] md:h-[20rem]">
                         <figure className="mb-4">
                             <img src={Camcorder} alt="" />
                         </figure>
                         <figcaption>
-                            <h2 className="text-[#FFAA0080] text-3xl">Content Production</h2>
+                            <h2 className="text-[#FFAA0080] text-2xl md:text-3xl">Content Production</h2>
                         </figcaption>
                     </div>
                 </div>
             </Shape>
             <Shape car={false} headText={"Meet the Team"}>
-                <div className="w-full flex flex-row justify-between items-center">
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6 md:flex md:flex-row md:justify-between md:items-center ">
                     <section className="flex flex-col items-center mx-10">
                         <figure className="block rounded-full h-fit">
                             <img src={Loud} alt="" />

@@ -10,28 +10,27 @@ export const Home = ()=>{
     return(
         <section className="m-0 p-0 w-full">
             <Hero></Hero>
-            <Shape headText={"Introducing our Artistes"} car={true}>
-                  
+            <Shape headText={"Introducing our Artistes"} car={true} linkDir={"/artists"}>
+                <div className="flex flex-col md:flex-row items-center justify-center md:justify-between w-full">
                 {
-                    ArtistPack.map((artist) =>{
+                    ArtistPack.map((artist, y) =>{
                         return (
                             <>
-                             <ArtistFace link={artist.link} name={artist.name}></ArtistFace>
+                             <ArtistFace key={y} link={artist.link} name={artist.name}></ArtistFace>
                             </>
                         )
                     })
                 }
-    
-                
+                </div>   
             </Shape>
-            <Shape car={true} headText={"Latest Release"}>
+            <Shape car={true} headText={"Latest Release"} linkDir={'/music'}>
                 <div className="flex md:flex-row flex-col">
                     <MusicCards></MusicCards>
                     <MusicCards></MusicCards>
                     <MusicCards></MusicCards>
                 </div>
             </Shape>
-            <Shape car={false} headText={"Videos"}>
+            <Shape car={false} headText={"Videos"} linkDir={'/music'}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-[auto]">
                    {
                     YouTubeVideos.map((x,y) =>{

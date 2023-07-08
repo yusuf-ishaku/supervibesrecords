@@ -1,8 +1,11 @@
 import Logo from "../assets/images/logo.png";
-import { NavLink,} from 'react-router-dom';
-export const Nav2 = () =>{
+import { NavLink } from 'react-router-dom';
+import { useContext } from "react";
+import { DisplayHamContext } from "../App";
+export const Nav2 = (props) =>{
+    const {display } = useContext(DisplayHamContext);
     return(
-        <section className="flex-col flex sm:hidden mt-20 fixed bg-[#0A0B14] w-full">
+        <section className={ display ? "flex-col flex sm:hidden pt-20 top-0 sticky  bg-[#0A0B14] w-full" : "hidden"}>
         <h3 className="mx-4 my-1 text-white">
             <NavLink to={'/'} >Home</NavLink>
         </h3>

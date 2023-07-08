@@ -1,9 +1,11 @@
 import Logo from "../assets/images/logo.png";
 import { NavLink,} from 'react-router-dom';
 import ToggleMenu from "../assets/images/segment.png";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { DisplayHamContext } from "../App";
 export const NavBar = () =>{
-    const [visible, setToggleVisible] = useState(false)
+    // const [visible, setToggleVisible] = useState(false);
+    const { display, setDisplay } = useContext(DisplayHamContext);
     return (
         <nav className="flex flex-row items-center m-0 fixed w-full h-[5rem]  bg-white/30 backdrop-blur-sm z-50">
            <figure className="h-[100%] w-fit pl-4 mr-auto">
@@ -29,7 +31,7 @@ export const NavBar = () =>{
                     <NavLink to={"/contact"}>Contact Us</NavLink>
                 </h3>
            </section>
-           <figure className="md:hidden h-[100%] flex justify-center items-center w-fit pl-4 mr-5" onClick={() => setToggleVisible(!visible)}>
+           <figure className="md:hidden h-[100%] flex justify-center items-center w-fit pl-4 mr-5" onClick={() =>setDisplay(!display)}>
                 <img  width="20rem" height='20rem' src={ToggleMenu}></img>
            </figure>
         </nav>

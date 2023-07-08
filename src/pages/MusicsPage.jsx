@@ -5,7 +5,7 @@ import { YouTubeVideos } from "../assets/db/ytvids";
 export const MusicsPage = () =>{
     const [setter, setSetter] = useState(true)
     return(
-        <section className="w-full px-24 pt-[10rem] pb-10 bg-[#0A0B14]">
+        <section className="w-full px-4 md:px-24 pt-28 md:pt-[10rem] pb-10 bg-[#0A0B14]">
              <header className="w-full text-center text-3xl pb-14">
                 <h1 className="text-white">Music</h1>
             </header>
@@ -23,7 +23,7 @@ export const MusicsPage = () =>{
                         <>
                             {YouTubeVideos.map((x,y) =>{
                                 return(
-                                    <div key={y} className="md:w-[15rem] w-full"><ReactPlayer width={"inherit"} controls={true} url={x}></ReactPlayer></div>
+                                    <div key={y} className="md:w-[34rem] w-full"><ReactPlayer width={"inherit"} controls={true} url={x}></ReactPlayer></div>
                                 )
                             })}
                         </>

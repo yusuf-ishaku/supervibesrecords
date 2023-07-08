@@ -9,14 +9,21 @@ import { MusicsPage } from './pages/MusicsPage';
 import { ToursAndTickets } from './pages/ToursandTickets';
 import { Contact } from './pages/Contact';
 import { Nav2 } from './components/Nav2';
+import { createContext, useState,  } from 'react';
+export const DisplayHamContext = createContext(null);
 function App() {
   // const [count, setCount] = useState(0);
+  const [display, setDisplay] = useState(false);
 
   return (
     <>
      <Router>
-      <NavBar></NavBar>
-      <Nav2></Nav2>
+      
+      <DisplayHamContext.Provider value={{display, setDisplay}}>
+        <NavBar></NavBar>
+        <Nav2></Nav2>
+      </DisplayHamContext.Provider>
+      
       <Routes>
         <Route element={<Home></Home>} path="/"></Route>
         <Route element={<AboutUs></AboutUs>} path='/about'></Route>

@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 // import { Children } from "react"
 import { IoArrowForwardCircleOutline, IoArrowBackCircleOutline } from 'react-icons/io5';
-export const Shape = ({children, headText, car}) =>{
+import { Link } from 'react-router-dom';
+export const Shape = ({children, headText, car, linkDir}) =>{
     return(
         <section className="w-full h-fit bg-[#0A0B14] py-8 px-2 md:px-16">
             <div className="flex flex-col items-center mt-10 mb-10">
@@ -14,19 +15,28 @@ export const Shape = ({children, headText, car}) =>{
                     <div className="p-0 m-0 w-16 h-0 ml-1 border-[#FFAA00] border-t-[1px]"></div>
                 </div>
             </div>
-            <div  className=" overflow-x-hidden">
-                <div  className="clan flex flex-col md:flex-row items-center justify-center md:justify-between w-fit p-5 carousel">
+            <div  className="flex flex-col items-center md:block overflow-x-hidden">
+                {car ? <div  className="clan flex flex-col md:flex-row items-center justify-center md:justify-between w-fit p-2 md:p-5 carousel">
                     {children}
                 </div>
+                :
+                <>
+                {children}
+                </>
+                
+                }
             </div>
             { car ? <div className="flex flex-row justify-between">
                 <div className="flex flex-row w-16 justify-between">
                 <IoArrowBackCircleOutline size={"30px"} color="gray" ></IoArrowBackCircleOutline>
                 <IoArrowForwardCircleOutline   size={'30px'} color={"gray"} ></IoArrowForwardCircleOutline>
                 </div>
-                <button className='border-[#FFAA00] text-[#FFAA00] p-2 px-6 border-[1px] rounded-md bg-[]'>
-                    See more
-                </button>
+                <Link to={linkDir}>
+                    <button className='border-[#FFAA00] text-[#FFAA00] p-2 px-6 border-[1px] rounded-md bg-[]'>
+                        See more
+                    </button>
+                </Link>
+                
             </div> : ""}
         </section>
     )

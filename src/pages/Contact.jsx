@@ -7,15 +7,15 @@ import { IoMdMail } from "react-icons/io"
 import { FaPhoneAlt} from 'react-icons/fa'
 export const Contact = () =>{
     return (
-        <section className= "w-full px-24 pt-[10rem] pb-10 bg-[#0A0B14]">
+        <section className= "w-full px-4 md:px-24 pt-28 md:pt-[10rem] pb-10 bg-[#0A0B14]">
             <header className="w-full text-center text-3xl">
                 <h1 className="text-white">Contact Us</h1>
             </header>
-            <section className="flex flex-row items-center justify-around">
-                <div className="flex flex-row justify-center items-center w-3/6">
+            <section className="flex md:flex-row flex-col items-center justify-around">
+                <div className="flex flex-row justify-center items-center w-full md:w-3/6">
                     <img className="w-[20rem]" src={Cuate}></img>
                 </div>
-                <form className="w-3/6 flex flex-col justify-center items-center">
+                <form className="md:w-3/6 w-full flex flex-col justify-center items-center">
                     <header className="text-center mb-6">
                         <h1 className="text-white text-xl">
                             Let's Grow your Music
@@ -38,15 +38,15 @@ export const Contact = () =>{
                         <div className="p-0 m-0 w-16 h-0 ml-1 border-[#FFAA00] border-t-[1px]"></div>
                     </div>
                 </div>
-                <div className="w-full flex flex-row justify-between">
-                    <div className="w-1/2 text-center">
+                <div className="w-full flex md:flex-row flex-col items-center justify-between">
+                    <div className="w-1/2 text-center my-4">
                         <h2 className="text-2xl text-white">Visit our office</h2>
                         <span className="text-white flex flex-row">
                             <IoLocationSharp color="#FFAA00" style={{marginRight: "10px"}}></IoLocationSharp>
                             No. 15 Carlston Drive, Uyo
                         </span>
                     </div>
-                    <div className="w-1/2 text-center">
+                    <div className="w-1/2 text-center my-4">
                         <h2 className="text-2xl text-white">Contact us Via</h2>
                         <span className="text-white flex flex-row">
                             <FaPhoneAlt color="#FFAA00" style={{marginRight: "10px"}}></FaPhoneAlt>
