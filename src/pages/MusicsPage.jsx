@@ -23,7 +23,7 @@ export const MusicsPage = () =>{
                         <>
                             {YouTubeVideos.map((x,y) =>{
                                 return(
-                                    <div key={y} className="md:w-[34rem] w-full"><ReactPlayer width={"inherit"} controls={true} url={x}></ReactPlayer></div>
+                                    <div key={y} className="md:w-[34rem] w-full"><ReactPlayer style={{backgroundColor: "gray"}} width={"inherit"} controls={true} url={x}></ReactPlayer></div>
                                 )
                             })}
                         </>

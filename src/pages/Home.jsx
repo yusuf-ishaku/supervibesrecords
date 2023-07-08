@@ -35,7 +35,7 @@ export const Home = ()=>{
                    {
                     YouTubeVideos.map((x,y) =>{
                         return(
-                            <div key={y} className="md:w-[34rem] w-full"><ReactPlayer width={"inherit"} controls={true} url={x}></ReactPlayer></div>
+                            <div key={y} className="md:w-[34rem] w-full"><ReactPlayer width={"inherit"} style={{backgroundColor: "gray"}} controls={true} url={x}></ReactPlayer></div>
                         )
                     })
                    }
