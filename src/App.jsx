@@ -20,11 +20,11 @@ function App() {
     <>
      <Router>
       
-      <DisplayHamContext.Provider value={{display, setDisplay}}>
+      {/* <DisplayHamContext.Provider value={{display, setDisplay}}>
         <NavBar></NavBar>
         <Nav2></Nav2>
       </DisplayHamContext.Provider>
-      
+       */}
       <Routes>
         <Route element={<ErrorPage></ErrorPage>} path="/"></Route>
         <Route element={<AboutUs></AboutUs>} path='/about'></Route>
