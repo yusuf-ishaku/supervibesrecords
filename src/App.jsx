@@ -10,7 +10,7 @@ import { ToursAndTickets } from './pages/ToursandTickets';
 import { Contact } from './pages/Contact';
 import { Nav2 } from './components/Nav2';
 import { createContext, useState,  } from 'react';
-import { ErrorPage } from './pages/CreateError';
+// import { ErrorPage } from './pages/CreateError';
 export const DisplayHamContext = createContext(null);
 function App() {
   // const [count, setCount] = useState(0);
@@ -19,14 +19,13 @@ function App() {
   return (
     <>
      <Router>
-      
-      {/* <DisplayHamContext.Provider value={{display, setDisplay}}>
+      <DisplayHamContext.Provider value={{display, setDisplay}}>
         <NavBar></NavBar>
         <Nav2></Nav2>
       </DisplayHamContext.Provider>
-       */}
+      
       <Routes>
-        <Route element={<ErrorPage></ErrorPage>} path="/"></Route>
+        <Route element={<Home></Home>} path="/"></Route>
         <Route element={<AboutUs></AboutUs>} path='/about'></Route>
         <Route element={<ArtistsPage></ArtistsPage>} path='/artists'></Route>
         <Route element={<MusicsPage></MusicsPage>} path='/music'></Route>

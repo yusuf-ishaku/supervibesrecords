@@ -4,7 +4,8 @@ import Cuate from "../assets/images/cuate.png"
 import {IoLocationSharp, } from 'react-icons/io5';
 import { IoMdMail } from "react-icons/io"
 // import { BiSolidPhone } from "react-icons/bi"
-import { FaPhoneAlt} from 'react-icons/fa'
+import { FaPhoneAlt} from 'react-icons/fa';
+import { Footer } from "../components/Footer";
 export const Contact = () =>{
     return (
         <section className= "w-full px-4 md:px-24 pt-28 md:pt-[10rem] pb-10 bg-[#0A0B14]">
@@ -59,7 +60,7 @@ export const Contact = () =>{
                     </div>
                 </div>
             </section>
-                
+            <Footer></Footer>
         </section>
     )
 }

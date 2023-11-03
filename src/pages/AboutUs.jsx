@@ -9,6 +9,7 @@ import Loud from "../assets/images/uimage.png";
 import Loud2 from "../assets/images/uimage1.png";
 import Loud3 from "../assets/images/uimage2.png";
 import Loud4 from "../assets/images/uimage3.png";
+import { Footer } from "../components/Footer";
 export const AboutUs = () =>{
     // const [nums, setNums] = useState(0);
     
@@ -141,6 +142,7 @@ export const AboutUs = () =>{
                 </div>
             </Shape>
         </section>
+        <Footer></Footer>
       </>
     );
 }

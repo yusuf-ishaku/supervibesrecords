@@ -22,6 +22,7 @@ export default {
     "./src/components/NewTickets.jsx",
     "./src/components/Nav2.jsx",
     "./src/components/CreateError.jsx",
+    "./src/components/Footer.jsx",
 
   ],
   theme: {

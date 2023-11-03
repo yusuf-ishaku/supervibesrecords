@@ -6,9 +6,10 @@ import { ArtistFace } from "../components/minorComponents/artistFace";
 import { MusicCards } from "../components/minorComponents/musicCards";
 import ReactPlayer from "react-player/youtube";
 import { YouTubeVideos } from "../assets/db/ytvids";
+import { Footer } from "../components/Footer";
 export const Home = ()=>{
     return(
-        <section className="m-0 p-0 w-full">
+        <>
             <Hero></Hero>
             <Shape headText={"Introducing our Artistes"} car={true} linkDir={"/artists"}>
                 <div className="flex flex-col md:flex-row items-center justify-center md:justify-between w-full">
@@ -41,6 +42,7 @@ export const Home = ()=>{
                    }
                 </div>  
             </Shape>
-        </section> 
+            <Footer></Footer>
+        </> 
     )
 }
