@@ -21,7 +21,6 @@ function App() {
      <Router>
       <DisplayHamContext.Provider value={{display, setDisplay}}>
         <NavBar></NavBar>
-        <Nav2></Nav2>
       </DisplayHamContext.Provider>
       
       <Routes>

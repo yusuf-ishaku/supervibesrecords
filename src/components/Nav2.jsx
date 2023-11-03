@@ -5,7 +5,7 @@ import { DisplayHamContext } from "../App";
 export const Nav2 = (props) =>{
     const {display } = useContext(DisplayHamContext);
     return(
-        <section className={ display ? "flex-col flex sm:hidden pt-20 top-0 sticky  bg-[#0A0B14] w-full" : "hidden"}>
+        <section className={ display ? "flex-col flex sm:hidden pt-20 top-0 sticky z-30  bg-[#0A0B14] w-full" : "hidden"}>
         <h3 className="mx-4 my-1 text-white">
             <NavLink to={'/'} >Home</NavLink>
         </h3>

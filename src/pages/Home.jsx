@@ -12,7 +12,7 @@ export const Home = ()=>{
         <>
             <Hero></Hero>
             <Shape headText={"Introducing our Artistes"} car={true} linkDir={"/artists"}>
-                <div className="flex flex-col md:flex-row items-center justify-center md:justify-between w-full">
+                <div className="grid grid-cols-2 gap-2 md:flex md:flex-row items-center justify-center md:justify-between w-full">
                 {
                     ArtistPack.map((artist, y) =>{
                         return (
@@ -32,11 +32,11 @@ export const Home = ()=>{
                 </div>
             </Shape>
             <Shape car={false} headText={"Videos"} linkDir={'/music'}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-[auto]">
+                <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 p-0 w-full">
                    {
                     YouTubeVideos.map((x,y) =>{
                         return(
-                            <div key={y} className="md:w-[34rem] w-full"><ReactPlayer width={"inherit"} style={{backgroundColor: "gray"}} controls={true} url={x}></ReactPlayer></div>
+                            <div key={y} className="w-full"><ReactPlayer width={"inherit"} style={{backgroundColor: "gray"}} controls={true} url={x}></ReactPlayer></div>
                         )
                     })
                    }

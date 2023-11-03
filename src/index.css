@@ -10,13 +10,16 @@ body{
     margin: 0;
 }
 .ryan{
-    background-image: url(../src/assets/images/firstimage.png)
+    background-image: url(../src/assets/images/firstimage.png);
+    background-position: center;
 }
 .terry{
     background-image: url(../src/assets/images/alex-d-rogers-062820-0109-wide\ 2.png);
+    background-position: center;
 }
 .friz{
     background-image: url(../src/assets/images/Rectangle\ 24.png);
+    background-position: center;
 }
 .clan{
     transition: transform 1s;
