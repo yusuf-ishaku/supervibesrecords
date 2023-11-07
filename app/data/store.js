@@ -1,8 +1,8 @@
 "use client"
 
 import { configureStore } from "@reduxjs/toolkit";
-import { generalApiSlice } from "./apiSlice/generalApiSlice";
-import userReducer from "./dataSlice/userSlice"
+import { generalApiSlice } from "./api/generalApiSlice";
+// import userReducer from "./dataSlice/userSlice"
 
 export const store = configureStore({
     reducer: {
