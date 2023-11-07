@@ -1,15 +1,12 @@
 export default function Page(){
     return (
-        <div>
             <form>
-            <input type="text"></input>
-            <input type="file"></input>
-            <input type="file"> </input>
-            <button type="submit">
-                Submit
-            </button>
+                <input type="text"/>
+                <input type="file"/>
+                <input type="file"/>
+                <button type="submit">
+                    Submit
+                </button>
             </form>
-           
-        </div>
     )
 }
