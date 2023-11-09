@@ -6,7 +6,8 @@ import { IoMdMail } from "react-icons/io"
 import { FaPhoneAlt} from 'react-icons/fa';
 import { Footer } from "../components/Footer";
 import Image from "next/image"
-
+import { useEffect } from "react";
+"use client"
 export default function Page(){
     return (
         <section className= "w-full px-4 md:px-24 pt-28 md:pt-[10rem] pb-10 bg-[#0A0B14]">

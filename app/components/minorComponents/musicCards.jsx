@@ -9,8 +9,8 @@ export const MusicCards = ({img, title, artiste}) =>{
                     <img className="object-fit rounded-lg" src={img ? img : "https://live.staticflickr.com/65535/52978370704_11a3f81fbd_m.jpg"} width="199" height="166" alt="Rectangle 19"/>
                 </div>
                 <article className="flex flex-col justify-start ml-4">
-                    <h3 className="text-2xl text-white leading-6">{title}</h3>
-                    <h4 className="text-base font-light text-white">{artiste}</h4>
+                    <h3 className="text-lg sm:text-2xl text-white leading-6">{title}</h3>
+                    <h4 className="text-sm font-light text-white">{artiste}</h4>
                     <MusicPlayer></MusicPlayer>
                 </article>
             </div>

@@ -27,13 +27,13 @@ export const Shape = ({children, headText, car, linkDir}) =>{
                 
                 }
             </div>
-            { car ? <div className="flex flex-row justify-between">
+            { car ? <div className="flex flex-row justify-between mt-4">
                 <div className="flex flex-row w-16 justify-between">
                 <IoArrowBackCircleOutline size={"30px"} color="gray" ></IoArrowBackCircleOutline>
                 <IoArrowForwardCircleOutline   size={'30px'} color={"gray"} ></IoArrowForwardCircleOutline>
                 </div>
                 <Link href={linkDir}>
-                    <button className='border-[#FFAA00] text-[#FFAA00] p-2 px-6 border-[1px] rounded-md bg-[]'>
+                    <button className='border-[#FFAA00] text-[#FFAA00] text-sm h-fit py-1 sm:py-2 px-3 sm:px-6 border-[1px] rounded-md'>
                         See more
                     </button>
                 </Link>

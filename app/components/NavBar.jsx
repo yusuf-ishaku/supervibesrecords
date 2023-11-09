@@ -10,7 +10,7 @@ import { Nav2 } from "./Nav2";
 import { usePathname } from "next/navigation";
 export const NavBar = () =>{
     // const [visible, setToggleVisible] = useState(false);
-    const { display, setDisplay } = useState(false);
+    const [display, setDisplay ] = useState(false);
     const pathname = usePathname();
     return (
         <>

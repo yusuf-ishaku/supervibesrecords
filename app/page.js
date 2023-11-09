@@ -28,7 +28,7 @@ export default function Home() {
           }
           </div>   
       </Shape>
-      <Shape car={true} headText={"Latest Release"} linkDir={'/music'}>
+      <Shape car={true} headText={"Latest Release"} linkDir={'/discography'}>
           <div className="flex md:flex-row flex-col">
 
             {
