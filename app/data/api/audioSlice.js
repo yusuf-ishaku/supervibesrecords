@@ -8,8 +8,14 @@ export const audioApiSlice = generalApiSlice.injectEndpoints({
                 method: "POST",
                 body: newAudio
             })
+        }),
+        getAudios: builder.query({
+            query: () =>({
+                url: "/api/v1/audio",
+                method: "GET",
+            })
         })
     })
 });
 
-export const { useAddNewAudioMutation } = audioApiSlice;
+export const { useAddNewAudioMutation, useGetAudiosQuery } = audioApiSlice;

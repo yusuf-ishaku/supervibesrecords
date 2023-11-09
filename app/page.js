@@ -1,13 +1,17 @@
 // import Image from 'next/image'
+"use client"
 import { Hero } from "./components/Hero";
 import { Shape } from "./components/shape";
 import { ArtistPack } from "./assets/db/artist";
 import { ArtistFace } from "./components/minorComponents/artistFace";
+import { useGetAudiosQuery } from "./data/api/audioSlice";
 import { MusicCards } from "./components/minorComponents/musicCards";
 // import ReactPlayer from "react-player/youtube";
 // import { YouTubeVideos } from "./assets/db/ytvids";
 import { Footer } from "./components/Footer";
 export default function Home() {
+  const { data } = useGetAudiosQuery();
+  console.log( data );
   return (
     <>
       <Hero></Hero>
@@ -26,9 +30,25 @@ export default function Home() {
       </Shape>
       <Shape car={true} headText={"Latest Release"} linkDir={'/music'}>
           <div className="flex md:flex-row flex-col">
-              <MusicCards></MusicCards>
-              <MusicCards></MusicCards>
-              <MusicCards></MusicCards>
+
+            {
+              data?.code === 200 ?
+              data?.data.map(({imageUrl, artiste, title},y)=>{
+                return (
+                  <MusicCards key={y} img={imageUrl} artiste={artiste} title={title}></MusicCards>
+                )
+              })
+              :
+              (
+                <>
+                <MusicCards></MusicCards>
+                <MusicCards></MusicCards>
+                <MusicCards></MusicCards>
+                </>
+              
+              )
+            }
+              
           </div>
       </Shape>
       {/* <Shape car={false} headText={"Videos"} linkDir={'/music'}>

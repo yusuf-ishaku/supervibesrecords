@@ -14,8 +14,8 @@ export const NavBar = () =>{
     const pathname = usePathname();
     return (
         <>
-          <nav className="flex flex-row items-center m-0 fixed top-0 w-full h-fit  bg-white/30 backdrop-blur-sm z-50 px-4">
-           <figure className="h-[100%] w-fit mr-auto">
+          <nav className="flex flex-row items-center m-0 fixed top-0 w-full h-[5rem] sm:h-fit  bg-white/30 backdrop-blur-sm z-50 px-0 sm:px-4">
+           <figure className="h-fit w-fit mr-auto">
                 <Image src={Logo}></Image>
            </figure>
            <section className="flex-row hidden sm:flex">
@@ -40,7 +40,7 @@ export const NavBar = () =>{
            </section>
            <figure className="sm:hidden h-[100%] flex justify-center items-center w-fit pl-4 mr-5" onClick={() =>setDisplay(!display)}>
             {
-                !display ? <img  width="20rem" height='20rem' src={ToggleMenu}></img> : <RxCross2 className=" text-[#FFAA00]"></RxCross2>
+                !display ? <Image alt="Hamburger"  width="20rem" height='20rem' src={ToggleMenu}></Image> : <RxCross2 className=" text-[#FFAA00]"></RxCross2>
             }
                 
            </figure>
