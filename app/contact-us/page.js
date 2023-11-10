@@ -1,3 +1,4 @@
+"use client"
 import Cuate from "../assets/images/cuate.png"
 // import { Shape } from "../components/shape"
 import {IoLocationSharp, } from 'react-icons/io5';
@@ -7,7 +8,7 @@ import { FaPhoneAlt} from 'react-icons/fa';
 import { Footer } from "../components/Footer";
 import Image from "next/image"
 import { useEffect } from "react";
-"use client"
+
 export default function Page(){
     return (
         <section className= "w-full px-4 md:px-24 pt-28 md:pt-[10rem] pb-10 bg-[#0A0B14]">
