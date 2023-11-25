@@ -16,7 +16,7 @@ export const Shape = ({children, headText, car, linkDir}) =>{
                     <div className="p-0 m-0 w-16 h-0 ml-1 border-[#FFAA00] border-t-[1px]"></div>
                 </div>
             </div>
-            <div  className="flex flex-col items-center md:block overflow-x-hidden">
+            <div  className="flex flex-col items-center md:block overflow-x-scroll">
                 {car ? <div  className="clan flex flex-col md:flex-row items-center justify-center md:justify-between w-fit p-2 md:p-5 carousel">
                     {children}
                 </div>
