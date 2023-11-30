@@ -23,7 +23,7 @@ export default function Page(){
                         </h2>
                     </header>
                     <div className="text-[#FFAA00] text-3xl">
-                        <span><CountUp end={10} duration={8}></CountUp></span>
+                        <span><CountUp end={2} duration={8}></CountUp></span>
                     </div>
             </article>
             <article className="flex flex-col items-center my-10 md:my-0">
@@ -33,7 +33,7 @@ export default function Page(){
                         </h2>
                     </header>
                 <div className="text-[#FFAA00] text-3xl">
-                        <span><CountUp end={36} duration={8}></CountUp></span>
+                        <span><CountUp end={75} duration={8}></CountUp></span>
                 </div>
             </article>
             <article className="flex flex-col items-center">
@@ -43,7 +43,7 @@ export default function Page(){
                         </h2>
                     </header>
                     <div className="text-[#FFAA00] text-3xl">
-                        <span><CountUp end={19} duration={8}></CountUp></span>
+                        <span><CountUp end={17} duration={8}></CountUp></span>
                     </div>
             </article>
         </section>
