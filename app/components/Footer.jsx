@@ -15,7 +15,7 @@ export const Footer = () =>{
                     size={30}
                     ></FaFacebookF>
                 </Link>
-                <Link href={"https://instagram.com/supervibezrecords"}>
+                <Link href={"https://youtube.com/@supervibezrecords"}>
                     <FaYoutube
                     className="text-[#FFAA00] mx-6"
                     size={30}
