@@ -4,9 +4,11 @@ import ReactPlayer from "react-player/youtube";
 import { MusicCards } from "../components/minorComponents/musicCards";
 import { YouTubeVideos } from "../assets/db/ytvids";
 import { Footer } from "../components/Footer";
+import { useGetAudiosQuery } from "../data/api/audioSlice";
 
 export default function Page(){
-    const [setter, setSetter] = useState(true)
+    const [setter, setSetter] = useState(true);
+    const {data} = useGetAudiosQuery();
     return (
         <>
         <section className="w-full px-4 md:px-24 pt-28 md:pt-[10rem] pb-10 bg-[#0A0B14]">
@@ -35,10 +37,23 @@ export default function Page(){
                  : 
                  (
                  <>
-                     <MusicCards></MusicCards>
-                     <MusicCards></MusicCards>
-                     <MusicCards></MusicCards>
-                     <MusicCards></MusicCards>
+                    {
+                        data?.code === 200 ?
+                        data?.data.map(({imageUrl, artiste, title, audioUrl},y)=>{
+                            return (
+                            <MusicCards key={y} sound={audioUrl} img={imageUrl} artiste={artiste} title={title}></MusicCards>
+                            )
+                        })
+                        :
+                        (
+                            <>
+                            <MusicCards></MusicCards>
+                            <MusicCards></MusicCards>
+                            <MusicCards></MusicCards>
+                            </>
+                        
+                        )
+                    }
                  </>  
                  ) 
              }
