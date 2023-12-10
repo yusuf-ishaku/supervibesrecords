@@ -39,9 +39,9 @@ export default function Page(){
                  <>
                     {
                         data?.code === 200 ?
-                        data?.data.map(({imageUrl, artiste, title, audioUrl},y)=>{
+                        data?.data.map(({imageUrl, artiste, title, audioUrl, id},y)=>{
                             return (
-                            <MusicCards key={y} sound={audioUrl} img={imageUrl} artiste={artiste} title={title}></MusicCards>
+                            <MusicCards key={y} sound={audioUrl} id={id} img={imageUrl} artiste={artiste} title={title}></MusicCards>
                             )
                         })
                         :

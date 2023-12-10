@@ -2,11 +2,13 @@
 import { useState, useEffect } from "react";
 import useSound from "use-sound";
 import {BiPlay, BiPause} from 'react-icons/bi';
-import { IoMdShare } from "react-icons/io";
+import { IoMdShare, IoIosStarOutline  } from "react-icons/io";
 import { useSelector, useDispatch } from "react-redux";
 import { setNowPlaying } from "@/app/data/dataslice/nowPlayingSlice";
-export const MusicPlayer = ({audio, text}) =>{
+export const MusicNowPlaying = ({audio, text}) =>{
     const nowPlaying = useSelector((state) => state.nowPlaying.value);
+    // const data = useSelector((state) => state.api);
+    // console.log(data)
     const dispatch = useDispatch();
     const [isPlaying, setIsPlaying] = useState(false);
     const [play, {pause, duration, sound}] = useSound(audio);
@@ -17,15 +19,16 @@ export const MusicPlayer = ({audio, text}) =>{
     });
     const [seconds, setSeconds] = useState();
     async function copyContent() {
-      try {
-        await navigator.clipboard.writeText(text);
-        console.log('Content copied to clipboard');
-        /* Resolved - text copied to clipboard successfully */
-      } catch (err) {
-        console.error('Failed to copy: ', err);
-        /* Rejected - text failed to copy to the clipboard */
+        try {
+          await navigator.clipboard.writeText(text);
+          console.log('Content copied to clipboard');
+          /* Resolved - text copied to clipboard successfully */
+        } catch (err) {
+          console.error('Failed to copy: ', err);
+          /* Rejected - text failed to copy to the clipboard */
+        }
       }
-    }
+      
     useEffect(() => {
         const sec = duration / 1000;
         const min = Math.floor(sec / 60);
@@ -53,7 +56,7 @@ export const MusicPlayer = ({audio, text}) =>{
           return () => clearInterval(interval);
     }, [sound, audio, nowPlaying]);
     const playSound = () =>{
-
+        <IoIosStarOutline />
         if(isPlaying){
             pause();
             setIsPlaying(false);
@@ -61,17 +64,13 @@ export const MusicPlayer = ({audio, text}) =>{
             play();
             setIsPlaying(true);
             dispatch(setNowPlaying(audio));
-            // console.log(nowPlaying)
+            console.log(nowPlaying)
         }
     }
     return(
         <>
-        <div className="w-fit p-0 m-0 flex flex-row items-center">
-            {isPlaying ? 
-            <BiPause size={"28px"} onClick={() => playSound()} cursor={"pointer"}  color="#FFAA00"></BiPause> 
-            : 
-            <BiPlay onClick={() => playSound()} cursor={"pointer"} size={"28px"} color="#FFAA00"></BiPlay>
-            }
+         <div className="w-[70%] p-0 m-0 flex flex-row items-center justify-center mt-3" >
+            
             <input 
             style={{backgroundImage: `linear-gradient(#FFAA00, #FFAA00)`, backgroundSize: `${seconds}% 100%` , cursor: "pointer" }} 
             type="range" 
@@ -83,8 +82,18 @@ export const MusicPlayer = ({audio, text}) =>{
             onChange={(e) => {
                 sound.seek([e.target.value]);
               }} />
-            <IoMdShare onClick={copyContent}  color="#FFAA00" cursor={"pointer"} />
+           
         </div>
+        <div className="flex flex-row w-[70%] justify-between items-center mt-5">
+        <IoIosStarOutline  color="#FFAA00"/>
+        {isPlaying ? 
+            <BiPause size={"34px"} onClick={() => playSound()} cursor={"pointer"}  color="#FFAA00"></BiPause> 
+            : 
+            <BiPlay onClick={() => playSound()} cursor={"pointer"} size={"34px"} color="#FFAA00"></BiPlay>
+        }
+        <IoMdShare onClick={copyContent}  color="#FFAA00" cursor={"pointer"} />
+        </div>
+       
         </>
     )
 }

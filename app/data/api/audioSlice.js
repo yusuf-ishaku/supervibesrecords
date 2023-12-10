@@ -14,8 +14,14 @@ export const audioApiSlice = generalApiSlice.injectEndpoints({
                 url: "/api/v1/audio",
                 method: "GET",
             })
+        }),
+        getAudio: builder.query({
+            query: (id) =>({
+                url: `/api/v1/audio/${id}`,
+                method: 'GET'
+            })
         })
     })
 });
 
-export const { useAddNewAudioMutation, useGetAudiosQuery } = audioApiSlice;
+export const { useAddNewAudioMutation, useGetAudiosQuery, useGetAudioQuery } = audioApiSlice;
