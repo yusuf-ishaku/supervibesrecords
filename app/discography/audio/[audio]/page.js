@@ -1,4 +1,4 @@
-"use client"
+i"use client"
 
 import { MusicNowPlaying } from "./components/MusicNow";
 import { useGetAudioQuery } from "@/app/data/api/audioSlice";
@@ -21,7 +21,7 @@ export default function Page({params}) {
             { isLoading ?  "Singer" : audio?.data.artiste }
         </h3>
         </header>
-       <MusicNowPlaying audio = {audio?.data.audioUrl} text={`https://supervibesrecords.com/discography/audio/${params.audio}`}></MusicNowPlaying>
+       <MusicNowPlaying audio = {isLoading ? null : audio?.data.audioUrl} text={`https://supervibesrecords.com/discography/audio/${params.audio}`}></MusicNowPlaying>
     </section>
   )
 }
