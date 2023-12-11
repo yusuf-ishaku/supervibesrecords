@@ -1,4 +1,4 @@
-i"use client"
+"use client"
 
 import { MusicNowPlaying } from "./components/MusicNow";
 import { useGetAudioQuery } from "@/app/data/api/audioSlice";
