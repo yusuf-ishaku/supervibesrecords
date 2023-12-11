@@ -10,7 +10,7 @@ export default function Page({params}) {
   return (
     <section className="w-[100vw] h-[100vh] bg-[#0A0B14] flex flex-col items-center ">
        {
-      isLoading ?  
+      audio?.data.code === 200 ?  
  <div className="bg-gray-600 w-[80%] h-fit rounded-md mt-28">
              <img className="rounded-md" src={audio?.data.imageUrl}>
             </img>
@@ -25,7 +25,6 @@ export default function Page({params}) {
         </header>
        <MusicNowPlaying audio = {isLoading ? null : audio?.data.audioUrl} text={`https://supervibesrecords.com/discography/audio/${params.audio}`}></MusicNowPlaying>
 :
-
  <div className="bg-gray-600 w-[80%] h-fit rounded-md mt-28">
              <img className="rounded-md" src={audio?.data.imageUrl}>
             </img>
@@ -38,7 +37,8 @@ export default function Page({params}) {
             { isLoading ?  "Singer" : audio?.data.artiste }
         </h3>
         </header>
-       <MusicNowPlaying audio = {isLoading ? null : audio?.data.audioUrl} text={`https://supervibesrecords.com/discography/audio/${params.audio}`}></MusicNowPlaying>}
+       <MusicNowPlaying audio = {isLoading ? null : audio?.data.audioUrl} text={`https://supervibesrecords.com/discography/audio/${params.audio}`}></MusicNowPlaying>
+}
     </section>
   )
 }
