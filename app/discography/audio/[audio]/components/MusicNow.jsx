@@ -24,7 +24,7 @@ export const MusicNowPlaying = ({audio, title, artiste, text}) =>{
         try {
           await navigator.share({
             title: title,
-            text: `Listen to this song ${title} by ${artiste} now on Super Vibes Records.com`,
+            text: `Listen to this song ${title} by ${artiste} now on Super Vibes Records`,
             url: text
           });
           await navigator.clipboard.writeText(text);
