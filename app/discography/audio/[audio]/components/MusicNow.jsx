@@ -9,11 +9,10 @@ import { setNowPlaying } from "@/app/data/dataslice/nowPlayingSlice";
 
 export const MusicNowPlaying = ({audio, text}) =>{
     const nowPlaying = useSelector((state) => state.nowPlaying.value);
-    // const data = useSelector((state) => state.api);
-    // console.log(data)
+    console.log(audio)
     const dispatch = useDispatch();
     const [isPlaying, setIsPlaying] = useState(false);
-    const [play, {pause, duration, sound}] = useSound(audio.audioUrl);
+    const [play, {pause, duration, sound}] = useSound(audio);
     const [minValue, setMinValue] = useState(0)
     const [currTime, setCurrTime] = useState({
         min: "",
@@ -24,8 +23,8 @@ export const MusicNowPlaying = ({audio, text}) =>{
        if (navigator.share) {
         try {
           await navigator.share({
-            title: audio.title,
-            text: `Listen to my song ${audio.title} by ${audio.artiste} now on Super Vibes Records.com`,
+            title: title,
+            text: `Listen to my song ${title} by ${artiste} now on Super Vibes Records.com`,
             url: text
           });
           await navigator.clipboard.writeText(text);
@@ -56,7 +55,7 @@ export const MusicNowPlaying = ({audio, text}) =>{
               });
             }
           }, 1000);
-          if (audio.audioUrl !== nowPlaying){
+          if (audio !== nowPlaying){
             pause();
             setIsPlaying(false);
           }
@@ -64,13 +63,14 @@ export const MusicNowPlaying = ({audio, text}) =>{
           return () => clearInterval(interval);
     }, [sound, audio, nowPlaying]);
     const playSound = () =>{
+      // console.log(isPlaying)
         if(isPlaying){
             pause();
             setIsPlaying(false);
         }else{
             play();
             setIsPlaying(true);
-            dispatch(setNowPlaying(audio.audioUrl));
+            dispatch(setNowPlaying(audio));
             console.log(nowPlaying)
         }
     }

@@ -5,7 +5,6 @@ import {BiPlay, BiPause} from 'react-icons/bi';
 import { IoMdShare } from "react-icons/io";
 import { useSelector, useDispatch } from "react-redux";
 import { setNowPlaying } from "@/app/data/dataslice/nowPlayingSlice";
-import { RWebShare } from "react-web-share";
 export const MusicPlayer = ({audio,artiste, title, text}) =>{
     const nowPlaying = useSelector((state) => state.nowPlaying.value);
     const dispatch = useDispatch();
@@ -27,8 +26,7 @@ export const MusicPlayer = ({audio,artiste, title, text}) =>{
           })
           
         }catch (error){
-          console.log(error)
-          await navigator.clipboard.writeText(text);
+         await navigator.clipboard.writeText(text);
           console.log('Content copied to clipboard');
           console.log("Share not supported on this browser, do it the old way");
         }
@@ -91,19 +89,7 @@ export const MusicPlayer = ({audio,artiste, title, text}) =>{
             onChange={(e) => {
                 sound.seek([e.target.value]);
               }} />
-               <RWebShare
-                data={{
-                  title: title,
-                  text: `Listen to my song ${title} by ${artiste} now on Super Vibes Records.com`,
-                  url: text
-                }}
-                onClick={() =>
-                    console.log("shared successfully!")
-                }
-            >
-               <IoMdShare   color="#FFAA00" cursor={"pointer"} />
-            </RWebShare>
-            
+            <IoMdShare onClick={copyContent}  color="#FFAA00" cursor={"pointer"} />
         </div>
         </>
     )
