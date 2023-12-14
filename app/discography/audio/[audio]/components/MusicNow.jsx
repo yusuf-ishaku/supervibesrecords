@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setNowPlaying } from "@/app/data/dataslice/nowPlayingSlice";
 // import { Metadata } from 'next';
 
-export const MusicNowPlaying = ({audio, text}) =>{
+export const MusicNowPlaying = ({audio, title, artiste, text}) =>{
     const nowPlaying = useSelector((state) => state.nowPlaying.value);
     console.log(audio)
     const dispatch = useDispatch();
@@ -24,7 +24,7 @@ export const MusicNowPlaying = ({audio, text}) =>{
         try {
           await navigator.share({
             title: title,
-            text: `Listen to my song ${title} by ${artiste} now on Super Vibes Records.com`,
+            text: `Listen to this song ${title} by ${artiste} now on Super Vibes Records.com`,
             url: text
           });
           await navigator.clipboard.writeText(text);

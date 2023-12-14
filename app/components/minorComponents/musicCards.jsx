@@ -11,7 +11,7 @@ export const MusicCards = ({img, title, artiste, sound, id}) =>{
                 <article className="flex flex-col justify-start ml-4">
                     <h3 className="text-lg sm:text-2xl text-white leading-6">{title}</h3>
                     <h4 className="text-sm font-light text-white">{artiste}</h4>
-                    <MusicPlayer artiste = {artiste} title={artiste} audio={sound} text={`https://supervibesrecords.com/discography/audio/${id}`}></MusicPlayer>
+                    <MusicPlayer artiste = {artiste} title={title} audio={sound} text={`https://supervibesrecords.com/discography/audio/${id}`}></MusicPlayer>
                 </article>
             </div>
         </>

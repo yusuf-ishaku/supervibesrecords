@@ -13,6 +13,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
       openGraph: {
         images: audio.data.imageUrl,
       },
+      description: `${audio.data.title} by ${audio.data.artiste} only on Super Vibez Records, your perfect record label`
     }
 }
 

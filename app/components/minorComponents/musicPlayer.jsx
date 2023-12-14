@@ -21,7 +21,7 @@ export const MusicPlayer = ({audio,artiste, title, text}) =>{
         try {
           await navigator.share({
             title: title,
-            text: `Listen to my song ${title} by ${artiste} now on Super Vibes Records.com`,
+            text: `Listen to this song ${title} by ${artiste} now on Super Vibes Records.com`,
             url: text
           })
           
