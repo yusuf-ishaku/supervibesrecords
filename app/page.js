@@ -33,9 +33,9 @@ export default function Home() {
 
             {
               data?.code === 200 ?
-              data?.data.map(({imageUrl, artiste, title, audioUrl, id},y)=>{
+              data?.data.map(({imageUrl, artiste, title, audioUrl, _id},y)=>{
                 return (
-                  <MusicCards key={y} sound={audioUrl} img={imageUrl} artiste={artiste} id={id} title={title}></MusicCards>
+                  <MusicCards key={y} sound={audioUrl} img={imageUrl} artiste={artiste} id={_id} title={title}></MusicCards>
                 )
               })
               :
