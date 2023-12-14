@@ -5,7 +5,7 @@ import {BiPlay, BiPause} from 'react-icons/bi';
 import { IoMdShare } from "react-icons/io";
 import { useSelector, useDispatch } from "react-redux";
 import { setNowPlaying } from "@/app/data/dataslice/nowPlayingSlice";
-export const MusicPlayer = ({audio, text}) =>{
+export const MusicPlayer = ({audio,artiste, title, text}) =>{
     const nowPlaying = useSelector((state) => state.nowPlaying.value);
     const dispatch = useDispatch();
     const [isPlaying, setIsPlaying] = useState(false);
@@ -17,13 +17,19 @@ export const MusicPlayer = ({audio, text}) =>{
     });
     const [seconds, setSeconds] = useState();
     async function copyContent() {
-      try {
-        await navigator.clipboard.writeText(text);
-        console.log('Content copied to clipboard');
-        /* Resolved - text copied to clipboard successfully */
-      } catch (err) {
-        console.error('Failed to copy: ', err);
-        /* Rejected - text failed to copy to the clipboard */
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: title,
+            text: `Listen to my song ${title} by ${artiste} now on Super Vibes Records.com`,
+            url: text
+          })
+          
+        }catch (error){
+          await navigator.clipboard.writeText(text);
+          console.log('Content copied to clipboard');
+          console.log("Share not supported on this browser, do it the old way");
+        }
       }
     }
     useEffect(() => {

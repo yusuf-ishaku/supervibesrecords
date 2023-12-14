@@ -5,13 +5,15 @@ import {BiPlay, BiPause} from 'react-icons/bi';
 import { IoMdShare, IoIosStarOutline  } from "react-icons/io";
 import { useSelector, useDispatch } from "react-redux";
 import { setNowPlaying } from "@/app/data/dataslice/nowPlayingSlice";
+// import { Metadata } from 'next';
+
 export const MusicNowPlaying = ({audio, text}) =>{
     const nowPlaying = useSelector((state) => state.nowPlaying.value);
     // const data = useSelector((state) => state.api);
     // console.log(data)
     const dispatch = useDispatch();
     const [isPlaying, setIsPlaying] = useState(false);
-    const [play, {pause, duration, sound}] = useSound(audio);
+    const [play, {pause, duration, sound}] = useSound(audio.audioUrl);
     const [minValue, setMinValue] = useState(0)
     const [currTime, setCurrTime] = useState({
         min: "",
@@ -19,16 +21,22 @@ export const MusicNowPlaying = ({audio, text}) =>{
     });
     const [seconds, setSeconds] = useState();
     async function copyContent() {
+       if (navigator.share) {
         try {
+          await navigator.share({
+            title: audio.title,
+            text: `Listen to my song ${audio.title} by ${audio.artiste} now on Super Vibes Records.com`,
+            url: text
+          });
           await navigator.clipboard.writeText(text);
           console.log('Content copied to clipboard');
-          /* Resolved - text copied to clipboard successfully */
-        } catch (err) {
-          console.error('Failed to copy: ', err);
-          /* Rejected - text failed to copy to the clipboard */
+        }catch (error){
+         
+          console.log("Share not supported on this browser, do it the old way");
         }
       }
-      
+      }
+     
     useEffect(() => {
         const sec = duration / 1000;
         const min = Math.floor(sec / 60);
@@ -48,7 +56,7 @@ export const MusicNowPlaying = ({audio, text}) =>{
               });
             }
           }, 1000);
-          if (audio !== nowPlaying){
+          if (audio.audioUrl !== nowPlaying){
             pause();
             setIsPlaying(false);
           }
@@ -56,21 +64,19 @@ export const MusicNowPlaying = ({audio, text}) =>{
           return () => clearInterval(interval);
     }, [sound, audio, nowPlaying]);
     const playSound = () =>{
-        <IoIosStarOutline />
         if(isPlaying){
             pause();
             setIsPlaying(false);
         }else{
             play();
             setIsPlaying(true);
-            dispatch(setNowPlaying(audio));
+            dispatch(setNowPlaying(audio.audioUrl));
             console.log(nowPlaying)
         }
     }
     return(
         <>
          <div className="w-[70%] p-0 m-0 flex flex-row items-center justify-center mt-3" >
-            
             <input 
             style={{backgroundImage: `linear-gradient(#FFAA00, #FFAA00)`, backgroundSize: `${seconds}% 100%` , cursor: "pointer" }} 
             type="range" 

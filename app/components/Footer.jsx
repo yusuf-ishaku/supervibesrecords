@@ -27,7 +27,6 @@ export const Footer = () =>{
                     size={30}
                     ></RiInstagramFill>
                 </Link>
-                
             </div>
         </footer>
     )
