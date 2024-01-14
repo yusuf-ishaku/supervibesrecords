@@ -8,13 +8,13 @@ export const Caro =({children}) => {
     useEffect(() =>{
         let slides = carousel.current.children;
         slides[0].classList.add("current_slide");
-        console.log("mmm");
+        // console.log("mmm");
     },);
     let forwardMove = () =>{
         let slides = Array.from(carousel.current.children);
         // let value = slides.length;
-        console.log("fn")
-        console.log(slides);
+        // console.log("fn")
+        // console.log(slides);
         let currentSlide = document.querySelector(".current_slide");
         let targetSlide = currentSlide.nextElementSibling;
         let minard = slides.indexOf(currentSlide);

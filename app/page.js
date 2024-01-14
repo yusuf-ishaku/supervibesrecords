@@ -9,7 +9,7 @@ import { Footer } from "./components/Footer";
 import { MusicCardSkeleton } from "./components/minorComponents/musicCardSkeleton";
 export default function Home() {
   const { data } = useGetAudiosQuery();
-  console.log( data );
+  // console.log( data );
   return (
     <>
       <Hero></Hero>

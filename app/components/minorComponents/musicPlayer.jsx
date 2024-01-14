@@ -10,7 +10,12 @@ export const MusicPlayer = ({audio,artiste, title, text}) =>{
     const dispatch = useDispatch();
     const [isPlaying, setIsPlaying] = useState(false);
     const [play, {pause, duration, sound}] = useSound(audio);
-    const [minValue, setMinValue] = useState(0)
+    // console.log(duration);
+    // const [minValue, setMinValue] = useState(0);
+    const [fullTime, setFullTime] = useState({
+      min: "",
+      sec: "",
+    })
     const [currTime, setCurrTime] = useState({
         min: "",
         sec: ""
@@ -34,8 +39,14 @@ export const MusicPlayer = ({audio,artiste, title, text}) =>{
     }
     useEffect(() => {
         const sec = duration / 1000;
+        // console.log(sec);
         const min = Math.floor(sec / 60);
         const secRemain = Math.floor(sec % 60);
+        // console.log(min, secRemain);
+        setFullTime({
+          min,
+          sec: secRemain,
+        })
         const time = {
           min: min,
           sec: secRemain
@@ -47,7 +58,7 @@ export const MusicPlayer = ({audio,artiste, title, text}) =>{
               const sec = Math.floor(sound.seek([]) % 60);
               setCurrTime({
                 min,
-                sec,
+                sec: sec - 1,
               });
             }
           }, 1000);
@@ -55,9 +66,14 @@ export const MusicPlayer = ({audio,artiste, title, text}) =>{
             pause();
             setIsPlaying(false);
           }
-
+          // console.log(secRemain)
+          if ((audio === nowPlaying) && secRemain === currTime.sec) {
+            console.log(secRemain)
+            console.log("gree")
+            setIsPlaying(false)
+          }
           return () => clearInterval(interval);
-    }, [sound, audio, nowPlaying]);
+    }, [sound, audio, nowPlaying, isPlaying]);
     const playSound = () =>{
 
         if(isPlaying){
@@ -74,7 +90,7 @@ export const MusicPlayer = ({audio,artiste, title, text}) =>{
         <>
         <div className="w-fit p-0 m-0 flex flex-row items-center">
           {
-            duration !== 0 ?
+            duration !== 0 || !duration ?
              isPlaying ?
               <BiPause size={"28px"} onClick={() => playSound()} cursor={"pointer"}  color="#FFAA00"></BiPause> 
               : 
@@ -83,8 +99,8 @@ export const MusicPlayer = ({audio,artiste, title, text}) =>{
             <span className="loader">
             </span>
           }
-           
-            <input 
+           {/* <div className="flex flex-col items-start mt-6 w-fit justify-center"> */}
+           <input 
             style={{backgroundImage: `linear-gradient(#FFAA00, #FFAA00)`, backgroundSize: `${seconds}% 100%` , cursor: "pointer" }} 
             type="range" 
             defaultValue={0} 
@@ -95,7 +111,11 @@ export const MusicPlayer = ({audio,artiste, title, text}) =>{
             onChange={(e) => {
                 sound.seek([e.target.value]);
               }} />
+           {/* <span className="mt-2 text-xs font-mono text-[#f80]">{fullTime.min - currTime.min} : {currTime.sec}</span> */}
+           {/* </div> */}
+           
             <IoMdShare onClick={copyContent}  color="#FFAA00" cursor={"pointer"} />
+           
         </div>
         </>
     )
