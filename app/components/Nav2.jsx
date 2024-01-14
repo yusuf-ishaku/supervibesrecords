@@ -1,11 +1,7 @@
-import Logo from "../assets/images/logo.png";
-// import { Link } from 'react-router-dom';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-// import { DisplayHamContext } from "../App";
 export const Nav2 = (props) =>{
-    // const [display, setDisplay] = useState();
     const pathname = usePathname()
     return(
         <section className={ "flex-col flex sm:hidden pt-20 top-0 sticky z-30  bg-[#0A0B14] w-full"}>

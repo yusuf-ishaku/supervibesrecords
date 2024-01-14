@@ -2,7 +2,7 @@
 
 import { MusicNowPlaying } from "./components/MusicNow";
 import { useGetAudioQuery } from "@/app/data/api/audioSlice";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function Page({params}) {
     console.log(params);

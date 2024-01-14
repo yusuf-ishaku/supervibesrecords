@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import TImage from "../assets/images/ticket.png";
 import Event from "../assets/images/eventimage.png";
 import Image from "next/image"

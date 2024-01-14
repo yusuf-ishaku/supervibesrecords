@@ -5,8 +5,6 @@ export const Caro =({children}) => {
     const carousel = useRef();
     const carouselParent = useRef();
     const [mapper, setMapper] = useState(0);
-    // const [onFirstSlide, setOnFirstSlide] = useState(true);
-    // const [currSlide, setCurrSlide] = useState(document.querySelector(".current_slide"))
     useEffect(() =>{
         let slides = carousel.current.children;
         slides[0].classList.add("current_slide");

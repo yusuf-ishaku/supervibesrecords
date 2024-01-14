@@ -5,7 +5,6 @@ import {BiPlay, BiPause} from 'react-icons/bi';
 import { IoMdShare, IoIosStarOutline  } from "react-icons/io";
 import { useSelector, useDispatch } from "react-redux";
 import { setNowPlaying } from "@/app/data/dataslice/nowPlayingSlice";
-// import { Metadata } from 'next';
 
 export const MusicNowPlaying = ({audio, title, artiste, text}) =>{
     const nowPlaying = useSelector((state) => state.nowPlaying.value);

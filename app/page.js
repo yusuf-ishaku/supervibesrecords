@@ -1,4 +1,3 @@
-// import Image from 'next/image'
 "use client"
 import { Hero } from "./components/Hero";
 import { Shape } from "./components/shape";
@@ -6,9 +5,8 @@ import { ArtistPack } from "./assets/db/artist";
 import { ArtistFace } from "./components/minorComponents/artistFace";
 import { useGetAudiosQuery } from "./data/api/audioSlice";
 import { MusicCards } from "./components/minorComponents/musicCards";
-// import ReactPlayer from "react-player/youtube";
-// import { YouTubeVideos } from "./assets/db/ytvids";
 import { Footer } from "./components/Footer";
+import { MusicCardSkeleton } from "./components/minorComponents/musicCardSkeleton";
 export default function Home() {
   const { data } = useGetAudiosQuery();
   console.log( data );
@@ -41,9 +39,9 @@ export default function Home() {
               :
               (
                 <>
-                <MusicCards></MusicCards>
-                <MusicCards></MusicCards>
-                <MusicCards></MusicCards>
+                <MusicCardSkeleton></MusicCardSkeleton>
+                <MusicCardSkeleton></MusicCardSkeleton>  
+                <MusicCardSkeleton></MusicCardSkeleton>
                 </>
               
               )

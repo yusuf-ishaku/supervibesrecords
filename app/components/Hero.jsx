@@ -1,4 +1,3 @@
-// import Domi from "../assets/images/firstimage.png"
 "use client"
 import { IntroHero } from "./IntroHero";
 import { useRef } from "react";

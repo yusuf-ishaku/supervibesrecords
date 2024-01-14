@@ -5,11 +5,9 @@ import ToggleMenu from "../assets/images/segment.png";
 import { useState, useContext } from "react";
 import {RxCross2} from "react-icons/rx";
 import Image from "next/image";
-// import { DisplayHamContext } from "../App";
 import { Nav2 } from "./Nav2";
 import { usePathname } from "next/navigation";
 export const NavBar = () =>{
-    // const [visible, setToggleVisible] = useState(false);
     const [display, setDisplay ] = useState(false);
     const pathname = usePathname();
     return (

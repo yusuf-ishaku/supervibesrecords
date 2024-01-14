@@ -73,11 +73,17 @@ export const MusicPlayer = ({audio,artiste, title, text}) =>{
     return(
         <>
         <div className="w-fit p-0 m-0 flex flex-row items-center">
-            {isPlaying ? 
-            <BiPause size={"28px"} onClick={() => playSound()} cursor={"pointer"}  color="#FFAA00"></BiPause> 
-            : 
-            <BiPlay onClick={() => playSound()} cursor={"pointer"} size={"28px"} color="#FFAA00"></BiPlay>
-            }
+          {
+            duration !== 0 ?
+             isPlaying ?
+              <BiPause size={"28px"} onClick={() => playSound()} cursor={"pointer"}  color="#FFAA00"></BiPause> 
+              : 
+              <BiPlay onClick={() => playSound()} cursor={"pointer"} size={"28px"} color="#FFAA00"></BiPlay>
+            :
+            <span className="loader">
+            </span>
+          }
+           
             <input 
             style={{backgroundImage: `linear-gradient(#FFAA00, #FFAA00)`, backgroundSize: `${seconds}% 100%` , cursor: "pointer" }} 
             type="range" 

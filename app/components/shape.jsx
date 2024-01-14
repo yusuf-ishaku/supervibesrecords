@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-// import { Children } from "react"
 "use client"
 import { IoArrowForwardCircleOutline, IoArrowBackCircleOutline } from 'react-icons/io5';
 import  Link  from 'next/link';
