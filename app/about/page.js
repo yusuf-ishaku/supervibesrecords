@@ -95,7 +95,7 @@ export default function Page(){
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6 md:flex md:flex-row md:justify-between md:items-center ">
                 <section className="flex flex-col items-center mx-10">
                     <figure className="block rounded-full h-fit">
-                        <Image src={"https://live.staticflickr.com/65535/53356101245_bdb7d97592_b.jpg"} alt=""></Image>
+                        <img src={"https://live.staticflickr.com/65535/53356101245_bdb7d97592_b.jpg"} alt="Montala Jay"></img>
                     </figure>
                     <article className="flex flex-col items-center">
                         <h1 className="text-white text-2xl">Montala Jay</h1>
@@ -106,7 +106,7 @@ export default function Page(){
                 </section>
                 <section className="flex flex-col items-center mx-10">
                     <figure className="block rounded-full h-fit">
-                        <Image src={"https://live.staticflickr.com/65535/53356101255_83b06e4cc5_b.jpg"} alt=""></Image>
+                        <img  src={"https://live.staticflickr.com/65535/53356101255_83b06e4cc5_b.jpg"} alt="Drizel Pro"></img>
                     </figure>
                     <article className="flex flex-col items-center">
                         <h1 className="text-white text-2xl">Drizel Pro</h1>
