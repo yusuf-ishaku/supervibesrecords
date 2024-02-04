@@ -2,6 +2,7 @@
 import { Hero } from "./components/Hero";
 import { Shape } from "./components/shape";
 import { ArtistPack } from "./assets/db/artist";
+import ReactPlayer from "react-player/youtube";
 import { ArtistFace } from "./components/minorComponents/artistFace";
 import { useGetAudiosQuery } from "./data/api/audioSlice";
 import { MusicCards } from "./components/minorComponents/musicCards";
