@@ -41,11 +41,11 @@ export default function Page() {
         <section className="w-full py-10 grid grid-cols-1 md:grid-cols-2 gap-6 p-[auto]">
           {setter ? (
             <>
-              {/* {YouTubeVideos.map((x,y) =>{
+              {YouTubeVideos.map((x,y) =>{
                              return(
                                  <div key={y} className="md:w-[34rem] w-full"><ReactPlayer style={{backgroundColor: "gray"}} width={"inherit"} controls={true} url={x}></ReactPlayer></div>
                              )
-                         })} */}
+                         })}
               <MusicCardSkeleton></MusicCardSkeleton>
             </>
           ) : (
