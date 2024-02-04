@@ -46,7 +46,6 @@ export default function Page() {
                                  <div key={y} className="md:w-[34rem] w-full"><ReactPlayer style={{backgroundColor: "gray"}} width={"inherit"} controls={true} url={x}></ReactPlayer></div>
                              )
                          })}
-              <MusicCardSkeleton></MusicCardSkeleton>
             </>
           ) : (
             <>
