@@ -49,7 +49,7 @@ export default function Home() {
               
           </div>
       </Shape>
-      {/* <Shape car={false} headText={"Videos"} linkDir={'/music'}>
+      <Shape car={false} headText={"Videos"} linkDir={'/music'}>
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 p-0 w-full">
             {
               YouTubeVideos.map((x,y) =>{
@@ -59,7 +59,7 @@ export default function Home() {
               })
             }
           </div>  
-      </Shape> */}
+      </Shape>
       <Footer></Footer>
     </>
   )
