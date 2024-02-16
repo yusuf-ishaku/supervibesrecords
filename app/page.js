@@ -2,6 +2,8 @@
 import { Hero } from "./components/Hero";
 import { Shape } from "./components/shape";
 import { ArtistPack } from "./assets/db/artist";
+import ReactPlayer from "react-player/youtube";
+import { YouTubeVideos } from "./assets/db/ytvids";
 import { ArtistFace } from "./components/minorComponents/artistFace";
 import { useGetAudiosQuery } from "./data/api/audioSlice";
 import { MusicCards } from "./components/minorComponents/musicCards";
@@ -49,7 +51,7 @@ export default function Home() {
               
           </div>
       </Shape>
-      {/* <Shape car={false} headText={"Videos"} linkDir={'/music'}>
+      <Shape car={false} headText={"Videos"} linkDir={'/music'}>
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 p-0 w-full">
             {
               YouTubeVideos.map((x,y) =>{
@@ -59,7 +61,7 @@ export default function Home() {
               })
             }
           </div>  
-      </Shape> */}
+      </Shape>
       <Footer></Footer>
     </>
   )
