@@ -2,15 +2,17 @@
 import { Hero } from "./components/Hero";
 import { Shape } from "./components/shape";
 import { ArtistPack } from "./assets/db/artist";
-import ReactPlayer from "react-player/youtube";
+
 import { YouTubeVideos } from "./assets/db/ytvids";
 import { ArtistFace } from "./components/minorComponents/artistFace";
-import { useGetAudiosQuery } from "./data/api/audioSlice";
+// import { useGetAudiosQuery } from "./data/api/audioSlice";
 import { MusicCards } from "./components/minorComponents/musicCards";
 import { Footer } from "./components/Footer";
 import { MusicCardSkeleton } from "./components/minorComponents/musicCardSkeleton";
-export default function Home() {
-  const { data } = useGetAudiosQuery();
+import { YoutubePlayer } from "./components/YoutubePlayer";
+export default async function Home() {
+  let data = await fetch("https://super-vibes-records.onrender.com/api/v1/audio");
+  data = await data.json();
   // console.log( data );
   return (
     <>
@@ -56,7 +58,7 @@ export default function Home() {
             {
               YouTubeVideos.map((x,y) =>{
                   return(
-                      <div key={y} className="w-full"><ReactPlayer width={"inherit"} style={{backgroundColor: "gray"}} controls={true} url={x}></ReactPlayer></div>
+                    <YoutubePlayer x={x} y={y}></YoutubePlayer>
                   )
               })
             }

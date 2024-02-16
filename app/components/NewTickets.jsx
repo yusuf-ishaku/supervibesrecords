@@ -6,7 +6,7 @@ export const NewTicket = (props) =>{
         <section className="mb-10">
             <section className="w-full flex flex-row justify-between">
                 <div className="object-cover rounded-md w-4/6 bg-gray-400">
-                    <Image className="object-cover rounded-md w-full h-full" src={Event}></Image>
+                    <img alt="" className="object-cover rounded-md w-full h-full" src={props.img}></img>
                 </div>
                 <div className="w-auto flex flex-col">
                     <Image src={TImage}></Image>

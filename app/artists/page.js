@@ -13,7 +13,7 @@ export default function Page(){
 
             {ArtistPack.map((elem, x) =>{
                 return(
-                    <ArtistInfo key={x} left={x % 2 ===0 ? true : false } artistName={elem.name} text={elem.about}></ArtistInfo>
+                    <ArtistInfo key={x} left={x % 2 ===0 ? true : false } img={elem.link} artistName={elem.name} text={elem.about}></ArtistInfo>
                 )
             })};
             </div>

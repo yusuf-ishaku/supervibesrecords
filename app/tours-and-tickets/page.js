@@ -1,14 +1,26 @@
 import { Footer } from "../components/Footer"
 import { NewTicket } from "../components/NewTickets"
-export default function Page(){
+export default async function Page(){
+    let data = await fetch("https://super-vibes-records.onrender.com/api/v1/ticket");
+    data = await data.json();
+    // console.log(data);
     return (
         <>
-        <section className= "w-full px-24 pt-[10rem] pb-10 bg-[#0A0B14]">
+        <section className= "w-full px-4 md:px-24 pt-10 md:pt-[10rem] pb-10 bg-[#0A0B14]">
           <header className="w-full text-center text-3xl pb-14">
               <h1 className="text-white">Tours and Tickets</h1>
           </header>
           <section className="w-full"> 
-              <NewTicket></NewTicket>
+            { data.code === 200 ? 
+                data.data.map((x,y) => {
+                    return (
+                        <NewTicket key={y} img={x.eventFlier}></NewTicket>
+                    )
+                })
+                
+                :
+                <NewTicket></NewTicket>
+            }
           </section>
       </section>
       <Footer></Footer>
