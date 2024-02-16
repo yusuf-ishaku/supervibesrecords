@@ -4,11 +4,11 @@ import Image from "next/image"
 export const NewTicket = (props) =>{
     return(
         <section className="mb-10">
-            <section className="w-full flex flex-row justify-between">
-                <div className="object-cover rounded-md w-4/6 bg-gray-400">
+            <section className="w-full flex flex-col md:flex-row justify-between">
+                <div className="object-cover rounded-md w-full mb-4 md:w-4/6 bg-gray-400">
                     <img alt="" className="object-cover rounded-md w-full h-full" src={props.img}></img>
                 </div>
-                <div className="w-auto flex flex-col">
+                <div className="w-auto md:h-full h-fit flex flex-col">
                     <Image src={TImage}></Image>
                     <Image src={TImage}></Image>
                     <Image src={TImage}></Image>

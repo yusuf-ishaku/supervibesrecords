@@ -6,8 +6,8 @@ export default async function Page(){
     // console.log(data);
     return (
         <>
-        <section className= "w-full px-4 md:px-24 pt-10 md:pt-[10rem] pb-10 bg-[#0A0B14]">
-          <header className="w-full text-center text-3xl pb-14">
+        <section className= "w-full px-4 md:px-24 pt-28 md:pt-[10rem] pb-10 bg-[#0A0B14]">
+          <header className="w-full text-center text-3xl pb-4 md:pb-14">
               <h1 className="text-white">Tours and Tickets</h1>
           </header>
           <section className="w-full"> 
@@ -17,7 +17,6 @@ export default async function Page(){
                         <NewTicket key={y} img={x.eventFlier}></NewTicket>
                     )
                 })
-                
                 :
                 <NewTicket></NewTicket>
             }
