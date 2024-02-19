@@ -1,15 +1,14 @@
-"use client";
 import { useState } from "react";
-import ReactPlayer from "react-player/youtube";
 import { MusicCards } from "../components/minorComponents/musicCards";
 import { MusicCardSkeleton } from "../components/minorComponents/musicCardSkeleton";
 import { YouTubeVideos } from "../assets/db/ytvids";
 import { Footer } from "../components/Footer";
-import { useGetAudiosQuery } from "../data/api/audioSlice";
+import { YoutubePlayer } from "./components/YoutubePlayer";
 
-export default function Page() {
+export default async function Page() {
   const [setter, setSetter] = useState(true);
-  const { data } = useGetAudiosQuery();
+  let data = await fetch("https://supervibesrecords.com/api/v1/audio");
+  data = await data.json();
   return (
     <>
       <section className="w-full px-4 md:px-24 pt-28 md:pt-[10rem] pb-10 bg-[#0A0B14]">
@@ -43,7 +42,7 @@ export default function Page() {
             <>
               {YouTubeVideos.map((x,y) =>{
                              return(
-                                 <div key={y} className="md:w-[34rem] w-full"><ReactPlayer style={{backgroundColor: "gray"}} width={"inherit"} controls={true} url={x}></ReactPlayer></div>
+                                 <YoutubePlayer x={x} y={y}></YoutubePlayer>
                              )
                          })}
             </>

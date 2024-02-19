@@ -27,8 +27,8 @@ body{
   background-position: center;
 }
 .loader {
-  width: 48px;
-  height: 48px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   position: relative;
   animation: rotate 1s linear infinite
@@ -39,7 +39,7 @@ body{
   position: absolute;
   inset: 0px;
   border-radius: 50%;
-  border: 5px solid #FFF;
+  border: 2px solid #FFAA00;
   animation: prixClipFix 2s linear infinite ;
 }
 

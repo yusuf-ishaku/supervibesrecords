@@ -9,7 +9,7 @@ export const ArtistInfo = (props) =>{
                 <header>
                     <h1 className="text-white text-3xl">{props.artistName}</h1>
                     <fig>
-                        
+                      
                     </fig>
                 </header>
                 <article>

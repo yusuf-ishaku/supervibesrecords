@@ -1,11 +1,9 @@
-"use client"
+// "use client"
 import { Hero } from "./components/Hero";
 import { Shape } from "./components/shape";
 import { ArtistPack } from "./assets/db/artist";
-
 import { YouTubeVideos } from "./assets/db/ytvids";
 import { ArtistFace } from "./components/minorComponents/artistFace";
-// import { useGetAudiosQuery } from "./data/api/audioSlice";
 import { MusicCards } from "./components/minorComponents/musicCards";
 import { Footer } from "./components/Footer";
 import { MusicCardSkeleton } from "./components/minorComponents/musicCardSkeleton";
