@@ -1,7 +1,7 @@
 import { Footer } from "../components/Footer"
 import { NewTicket } from "../components/NewTickets"
 export default async function Page(){
-    let data = await fetch("https://super-vibes-records.onrender.com/api/v1/ticket");
+    let data = await fetch("http://localhost:3001/api/v1/ticket");
     data = await data.json();
     // console.log(data);
     return (
@@ -14,7 +14,7 @@ export default async function Page(){
             { data.code === 200 ? 
                 data.data.map((x,y) => {
                     return (
-                        <NewTicket key={y} img={x.eventFlier}></NewTicket>
+                        <NewTicket tickets={x.tickets} key={y} img={x.eventFlier}></NewTicket>
                     )
                 })
                 :
