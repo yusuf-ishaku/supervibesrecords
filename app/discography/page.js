@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { MusicCards } from "../components/minorComponents/musicCards";
 import { MusicCardSkeleton } from "../components/minorComponents/musicCardSkeleton";
@@ -7,8 +7,14 @@ import { Footer } from "../components/Footer";
 import { YoutubePlayer } from "../components/YoutubePlayer";
 export default async function Page() {
   const [setter, setSetter] = useState(true);
-  let data = await fetch("https://supervibesrecords.com/api/v1/audio");
+  let data = await fetch(
+    "https://super-vibes-records.onrender.com/api/v1/audio",
+    {
+      cache: "no-store",
+    }
+  );
   data = await data.json();
+  console.log(data);
   return (
     <>
       <section className="w-full px-4 md:px-24 pt-28 md:pt-[10rem] pb-10 bg-[#0A0B14]">
@@ -40,24 +46,22 @@ export default async function Page() {
         <section className="w-full py-10 grid grid-cols-1 md:grid-cols-2 gap-6 p-[auto]">
           {setter ? (
             <>
-              {YouTubeVideos.map((x,y) =>{
-                             return(
-                                 <YoutubePlayer x={x} y={y}></YoutubePlayer>
-                             )
-                         })}
+              {YouTubeVideos.map((x, y) => {
+                return <YoutubePlayer key={y} x={x} y={y}></YoutubePlayer>;
+              })}
             </>
           ) : (
             <>
               {data?.code === 200 ? (
                 data?.data.map(
-                  ({ imageUrl, artiste, title, audioUrl, id }, y) => {
+                  ({ imageUrl, artiste, title, audioUrl, _id }, y) => {
                     return (
                       <MusicCards
                         key={y}
                         sound={audioUrl}
-                        id={id}
                         img={imageUrl}
                         artiste={artiste}
+                        id={_id}
                         title={title}
                       ></MusicCards>
                     );
