@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { TicketBuyForm } from "./components/ticketBuyForm";
 export default async function Page({params}){
-    const ticket = await fetch(`http://localhost:3001/api/v1/events/ticket/${params.ticket}`, {
+    const ticket = await fetch(`https://super-vibes-records.onrender.com/api/v1/events/ticket/${params.ticket}`, {
         cache: 'no-store'
     }).then((res) => res.json());
-    console.log(ticket)
+    // console.log(ticket);
     return (
       <section className="h-[100vh] bg-[#0A0B14] flex flex-col items-center ">
         <section className="w-full h-full px-4 pr-9 fixed bg-[#212121ab] overflow-y-auto pt-32 flex flex-row justify-center ">
