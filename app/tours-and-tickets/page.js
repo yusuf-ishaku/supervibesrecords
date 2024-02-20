@@ -1,7 +1,7 @@
 import { Footer } from "../components/Footer";
 import { NewTicket } from "../components/NewTickets";
 export default async function Page(){
-    let data = await fetch("https://super-vibes-records.onrender.com/api/v1/ticket", {
+    let data = await fetch("https://super-vibes-records.onrender.com/api/v1/events", {
         cache: "no-store"
     }).then((res) => res.json());
     return (

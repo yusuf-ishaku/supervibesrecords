@@ -4,8 +4,7 @@ import { MusicCards } from "../components/minorComponents/musicCards";
 import { MusicCardSkeleton } from "../components/minorComponents/musicCardSkeleton";
 import { YouTubeVideos } from "../assets/db/ytvids";
 import { Footer } from "../components/Footer";
-import { YoutubePlayer } from "./components/YoutubePlayer";
-
+import { YoutubePlayer } from "../components/YoutubePlayer";
 export default async function Page() {
   const [setter, setSetter] = useState(true);
   let data = await fetch("https://supervibesrecords.com/api/v1/audio");

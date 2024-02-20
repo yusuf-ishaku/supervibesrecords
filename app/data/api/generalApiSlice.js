@@ -1,7 +1,7 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: "https://super-vibes-record.onrender.com",
+    baseUrl: "http://localhost:3001",
 });
 
 export const generalApiSlice = createApi({

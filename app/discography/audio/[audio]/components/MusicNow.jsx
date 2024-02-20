@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
-import useSound from "use-sound";
+// import useSound from "use-sound";
 import {BiPlay, BiPause} from 'react-icons/bi';
 import { IoMdShare, IoIosStarOutline  } from "react-icons/io";
 import { useSelector, useDispatch } from "react-redux";
@@ -10,13 +10,6 @@ export const MusicNowPlaying = ({audio, title, artiste, text}) =>{
     const nowPlaying = useSelector((state) => state.nowPlaying.value);
     console.log(audio)
     const dispatch = useDispatch();
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [play, {pause, duration, sound}] = useSound(audio);
-    const [minValue, setMinValue] = useState(0)
-    const [currTime, setCurrTime] = useState({
-        min: "",
-        sec: ""
-    });
     const [seconds, setSeconds] = useState();
     async function copyContent() {
        if (navigator.share) {
@@ -34,33 +27,6 @@ export const MusicNowPlaying = ({audio, title, artiste, text}) =>{
         }
       }
       }
-     
-    useEffect(() => {
-        const sec = duration / 1000;
-        const min = Math.floor(sec / 60);
-        const secRemain = Math.floor(sec % 60);
-        const time = {
-          min: min,
-          sec: secRemain
-        };
-        const interval = setInterval(() => {
-            if (sound) {
-              setSeconds(sound.seek([])); // setting the seconds state with the current state
-              const min = Math.floor(sound.seek([]) / 60);
-              const sec = Math.floor(sound.seek([]) % 60);
-              setCurrTime({
-                min,
-                sec,
-              });
-            }
-          }, 1000);
-          if (audio !== nowPlaying){
-            pause();
-            setIsPlaying(false);
-          }
-
-          return () => clearInterval(interval);
-    }, [sound, audio, nowPlaying]);
     const playSound = () =>{
       // console.log(isPlaying)
         if(isPlaying){
