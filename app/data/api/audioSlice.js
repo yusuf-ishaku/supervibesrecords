@@ -20,8 +20,8 @@ export const audioApiSlice = generalApiSlice.injectEndpoints({
                 url: `/api/v1/audio/${id}`,
                 method: 'GET'
             })
-        })
+        }),
     })
 });
 
-export const { useAddNewAudioMutation, useGetAudiosQuery, useGetAudioQuery } = audioApiSlice;
+export const { useAddNewAudioMutation, useGetAudiosQuery, useGetAudioQuery  } = audioApiSlice;

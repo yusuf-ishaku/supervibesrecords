@@ -1,13 +1,6 @@
-"use client"
-
 import { MusicNowPlaying } from "./components/MusicNow";
-import { useGetAudioQuery } from "@/app/data/api/audioSlice";
-// import Image from "next/image";
-
-export default function Page({params}) {
-    console.log(params);
-    let {data: audio, isFetching, isLoading} = useGetAudioQuery(params.audio);
-    console.log(audio)
+export default async function Page({params}) {
+  let audio = await fetch(`https://super-vibes-records.onrender.com/api/v1/audio/${params.audio}`).then((res) => res.json());
   return (
     <section className="md:h-fit h-[100vh] bg-[#0A0B14] flex flex-col items-center "> 
       <div className="bg-gray-600 w-80 h-72 rounded-md mt-28 md:mt-32">

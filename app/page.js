@@ -9,7 +9,9 @@ import { Footer } from "./components/Footer";
 import { MusicCardSkeleton } from "./components/minorComponents/musicCardSkeleton";
 import { YoutubePlayer } from "./components/YoutubePlayer";
 export default async function Home() {
-  let data = await fetch("https://super-vibes-records.onrender.com/api/v1/audio");
+  let data = await fetch("https://super-vibes-records.onrender.com/api/v1/audio", {
+    cache: "no-cache"
+  });
   data = await data.json();
   // console.log( data );
   return (

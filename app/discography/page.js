@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 import { MusicCards } from "../components/minorComponents/musicCards";
 import { MusicCardSkeleton } from "../components/minorComponents/musicCardSkeleton";

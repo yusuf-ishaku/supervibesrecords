@@ -1,5 +1,6 @@
 import { Ticket } from "./Ticket";
 export const NewTicket = (props) =>{
+    // console.log(props)
     return(
         <section className="mb-10">
             <section className="w-full flex flex-col md:flex-row justify-between">
@@ -8,18 +9,16 @@ export const NewTicket = (props) =>{
                 </div>
                 <div className="w-auto md:w-2/6 md:h-full h-fit flex flex-col">
                     {
-                        props.tickets.map((x,y) => {
+                        props.tickets?.map((x,y) => {
                             return (
-                                <Ticket key={y} tag={x.tag} price = {x.price}>
+                                <Ticket key={y} tag={x.tag} id={x._id} price = {x.price}>
                                 </Ticket>
                             )
                         })
                     }
                 </div>
             </section>
-            <div className="flex flex-row justify-end mt-10">
-                <button className="border-[#FFAA00] text-[#FFAA00] p-2 px-6 border-[1px] rounded-md bg-[]">Buy Ticket</button>
-            </div>
+           
         </section>
     )
 }

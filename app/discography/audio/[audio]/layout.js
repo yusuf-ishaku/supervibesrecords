@@ -1,13 +1,5 @@
 export async function generateMetadata({ params, searchParams }, parent) {
-    // read route params
-    const id = params.audio
-   
-    // fetch data
-    const audio = await fetch(`https://super-vibes-records.onrender.com/api/v1/audio/${id}`).then((res) => res.json())
-   
-    // optionally access and extend (rather than replace) parent metadata
-    // const previousImages = (await parent).openGraph?.images || []
-   
+    const audio = await fetch(`https://super-vibes-records.onrender.com/api/v1/audio/${params.audio}`).then((res) => res.json());
     return {
       title: audio.data.title,
       openGraph: {
