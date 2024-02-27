@@ -56,11 +56,11 @@ export const TicketBuyForm = ({ id, price }) => {
       <div className="w-full flex justify-end">
         <button
           className={`${
-            true && "cursor-not-allowed"
+            isLoading && "cursor-not-allowed"
           } bg-[#ffaa00] px-6 py-2 rounded-md`}
           type="submit"
         >
-          {false ? (
+          {isLoading ? (
             <span className="loader mx-6 my-auto"></span>
           ) : (
             "Proceed to Buy"
