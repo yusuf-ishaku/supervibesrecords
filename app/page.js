@@ -9,7 +9,7 @@ import { Footer } from "./components/Footer";
 import { MusicCardSkeleton } from "./components/minorComponents/musicCardSkeleton";
 import { YoutubePlayer } from "./components/YoutubePlayer";
 export default async function Home() {
-  let data = await fetch("https://super-vibes-records.onrender.com/api/v1/audio", {
+  let data = await fetch("https://supervibesrecords-backend-production.up.railway.app/api/v1/audio", {
     cache: "no-cache"
   });
   data = await data.json();
@@ -58,7 +58,7 @@ export default async function Home() {
             {
               YouTubeVideos.map((x,y) =>{
                   return(
-                    <YoutubePlayer x={x} y={y}></YoutubePlayer>
+                    <YoutubePlayer key={y} x={x} y={y}></YoutubePlayer>
                   )
               })
             }

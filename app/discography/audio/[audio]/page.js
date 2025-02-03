@@ -1,6 +1,6 @@
 import { MusicNowPlaying } from "./components/MusicNow";
 export default async function Page({params}) {
-  let audio = await fetch(`https://super-vibes-records.onrender.com/api/v1/audio/${params.audio}`).then((res) => res.json());
+  let audio = await fetch(`https://supervibesrecords-backend-production.up.railway.app/api/v1/audio/${params.audio}`).then((res) => res.json());
   return (
     <section className="h-[100vh] bg-[#0A0B14] flex flex-col items-center "> 
       <div className="bg-gray-600 w-80 h-72 rounded-md mt-28 md:mt-32">

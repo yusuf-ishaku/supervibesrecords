@@ -8,7 +8,7 @@ import { YoutubePlayer } from "../components/YoutubePlayer";
 export default async function Page() {
   const [setter, setSetter] = useState(true);
   let data = await fetch(
-    "https://super-vibes-records.onrender.com/api/v1/audio",
+    "https://supervibesrecords-backend-production.up.railway.app/api/v1/audio",
     {
       cache: "no-store",
     }

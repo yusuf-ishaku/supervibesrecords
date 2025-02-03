@@ -14,7 +14,7 @@ export const NavBar = () =>{
         <>
           <nav className="flex flex-row items-center m-0 fixed top-0 w-full h-[5rem] sm:h-fit  bg-white/30 backdrop-blur-sm z-50 px-0 sm:px-4">
            <figure className="h-fit w-fit mr-auto">
-                <Image src={Logo}></Image>
+                <Image src={Logo} alt="SVR"></Image>
            </figure>
            <section className="flex-row hidden sm:flex">
                 <h3 className={pathname === "/" ? "mx-4 text-[#FFAA00]": "mx-4 text-white"}>
